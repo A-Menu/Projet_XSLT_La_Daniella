@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="RNG_la_daniella_a_menu.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="RNG_la_daniella_a_menu.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+
+      <fileDesc>
+         <titleStmt>
+            <title>La Daniella</title>
+            <author xml:id="g_sand" ref="https://catalogue.bnf.fr/ark:/12148/cb119236010">
+               <forename>George</forename>
+               <surname>Sand</surname>
+            </author>
+         </titleStmt>
+
+         <editionStmt>
+            <edition> Encodage et ODD réalisés dans le cadre du cours de XML-TEI de Mme Ségolène
+               Albouy du Master TNAH de l'Ecole nationale des chartes </edition>
+            <respStmt>
+               <resp>Encodage XML-TEI et création d'une ODD</resp>
+               <persName xml:id="a_menu">
+                  <forename>Ariane</forename>
+                  <surname>Menu</surname>
+               </persName>
+            </respStmt>
+         </editionStmt>
+
+         <publicationStmt>
+            <!-- En admettant que cet encodage soit publié sur Élec sous licence CC Share-Alike -->
+            <publisher>Éditions en ligne de l’école des chartes</publisher>
+            <pubPlace>Paris</pubPlace>
+            <date when-iso="2022-02">Février 2022</date>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by-sa/3.0/deed.fr">Licence
+                  Creative Commons Attribution-partage dans les mêmes conditions</licence>
+            </availability>
+         </publicationStmt>
+
+         <sourceDesc>
+            <biblFull>
+               <titleStmt>
+                  <title>La Daniella</title>
+                  <author ref="https://catalogue.bnf.fr/ark:/12148/cb119236010">
+                     <forename>George</forename>
+                     <surname>Sand</surname>
+                  </author>
+               </titleStmt>
+               <publicationStmt>
+                  <publisher>La Presse</publisher>
+                  <pubPlace>
+                     <address>
+                        <country key="FR"/>
+                        <settlement type="city">Paris</settlement>
+                        <postCode>75002</postCode>
+                        <district type="arrondissement">2e</district>
+                        <street>Rue Montmartre, <num>123</num>
+                        </street>
+                     </address>
+                  </pubPlace>
+                  <date when-iso="1857-01-14">14 janvier 1857</date>
+                  <distributor facs="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1">
+                     Bibliothèque nationale de France </distributor>
+                  <availability>
+                     <licence
+                        target="https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica"
+                        > Domaine public </licence>
+                  </availability>
+               </publicationStmt>
+               <seriesStmt>
+                  <title>La Daniella</title>
+                  <biblScope unit="book">La Daniella</biblScope>
+                  <biblScope unit="chapter">VIII</biblScope>
+                  <biblScope unit="page" from="1" to="3">1-3</biblScope>
+               </seriesStmt>
+            </biblFull>
+         </sourceDesc>
+      </fileDesc>
+
+      <encodingDesc>
+         <projectDesc>
+            <p>Encodage réalisé dans le cadre du cours de XML-TEI de Mme Ségolène Albouy du Master
+               TNAH de l'Ecole nationale des chartes</p>
+         </projectDesc>
+         <p>Cet encodage a été réalisé à partir de la numérisation disponible sur Gallica et
+            transcrit fidèlement, à l'exception des césures de fin de ligne qui furent retirées pour
+            plus de lisibilité et faciliter la recherche textuelle.</p>
+      </encodingDesc>
+
+      <profileDesc>
+         <creation>
+            <date when-iso="1857-01-14">14 janvier 1857</date>
+            <country key="FR">France</country>
+            <lang xml:lang="fr"/>
+         </creation>
+
+         <particDesc>
+            <listPerson>
+
+               <person xml:id="brumieres">
+                  <persName>Brumières</persName>
+                  <sex value="M"/>
+                  <note>Brumières est un peintre et ami du narrateur, <persName ref="#valreg">Jean
+                        Valreg</persName>. Ce dernier a fait sa connaissance à Marseille. Brumières
+                     se prend rapidement d'affection pour <persName ref="#medora"><roleName
+                           type="honorific">miss</roleName> Medora</persName>.</note>
+               </person>
+
+               <person xml:id="B">
+                  <persName><roleName type="nobility">Lord</roleName> B***</persName>
+                  <persName><roleName type="nobility">Lord</roleName> B.</persName>
+                  <persName><roleName type="nobility">Mylord</roleName></persName>
+                  <sex value="M"/>
+                  <note>Mari de <persName ref="#harriet"><roleName type="nobility">lady</roleName>
+                        Harriet</persName>, lord B*** est également l'oncle de <persName
+                        ref="#medora"><roleName type="honorific">miss</roleName> Medora</persName>.
+                     Il noue une amitié avec le personnage principal, <persName ref="#valreg">Jean
+                        Valreg</persName>.</note>
+               </person>
+
+               <person xml:id="valreg">
+                  <persName>Jean Valreg</persName>
+                  <sex value="M"/>
+                  <note>Jean Valreg est le personnage principal et le narrateur de l'histoire. S'il
+                     est aimé par <persName ref="#medora"><roleName type="honorific">miss</roleName>
+                        Medora</persName>, celui-ci est épris de <persName ref="#daniella">la
+                        Daniella</persName>.</note>
+               </person>
+
+               <person xml:id="harriet">
+                  <persName><roleName type="nobility">Lady</roleName> Harriet</persName>
+                  <persName><roleName type="nobility">Mylady</roleName></persName>
+                  <sex value="F"/>
+                  <note>Lady Harriet est l'épouse de <persName ref="#B"><roleName type="nobility"
+                           >lord</roleName> B***</persName> et la tante de <persName ref="#medora"
+                           ><roleName type="honorific">miss</roleName> Medora</persName>.</note>
+               </person>
+
+               <person xml:id="medora">
+                  <persName><roleName type="honorific">Miss</roleName> Medora</persName>
+                  <persName><roleName type="nobility">Princesse</roleName></persName>
+                  <sex value="F"/>
+                  <note>Nièce de <persName ref="#B"><roleName type="nobility">lord</roleName>
+                        B***</persName> et <persName ref="#harriet"><roleName type="nobility"
+                           >lady</roleName> Harriet</persName>, elle s'éprend de <persName
+                        ref="#valreg">Jean Valreg</persName> au début de l'histoire.</note>
+               </person>
+
+               <person xml:id="tartaglia">
+                  <persName>Tartaglia</persName>
+                  <persName>Benvenuto</persName>
+                  <persName>Antoniuccio</persName>
+                  <sex value="M"/>
+                  <note>Bohémien au service de <persName ref="#B"><roleName type="nobility"
+                           >lord</roleName> B***</persName> et <persName ref="#harriet"><roleName
+                           type="nobility">lady</roleName> Harriet</persName> et ami de <persName
+                        ref="#daniella">la Daniella</persName>.</note>
+               </person>
+
+               <person xml:id="daniella">
+                  <persName>La Daniella</persName>
+                  <persName>La Frascatine</persName>
+                  <sex value="F"/>
+                  <note>Femme de chambre italienne au service de <persName ref="#medora"><roleName
+                           type="honorific">miss</roleName> Medora</persName>.</note>
+               </person>
+
+               <person xml:id="oncle">
+                  <persName>L'abbé Valreg</persName>
+                  <sex value="M"/>
+                  <note>Onlce du <rs type="person" ref="#valreg">narrateur</rs>, c'est à lui que ce
+                     dernier s'adresse tout au long du roman.</note>
+               </person>
+
+            </listPerson>
+         </particDesc>
+
+         <settingDesc>
+            <listPlace>
+
+               <place xml:id="rome">
+                  <placeName>
+                     <name>Rome</name>
+                     <name>ville des Papes</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city"/>
+                        <postCode source="UN/LOCODE">IT ROM</postCode>
+                        <postCode source="GeoNames">3169070</postCode>
+                     </address>
+                  </placeName>
+                  <note>Lieu de l'intrigue du chapitre VIII.</note>
+               </place>
+
+               <place xml:id="civitavecchia">
+                  <placeName>
+                     <name>Civitavecchia</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city"/>
+                        <postCode source="UN/LOCODE">IT CVV</postCode>
+                        <postCode source="GeoNames">3178587</postCode>
+                     </address>
+                  </placeName>
+                  <note>Grand port à proximité de <placeName ref="#rome">Rome</placeName>.</note>
+               </place>
+
+               <place xml:id="saint_pierre">
+                  <placeName>
+                     <name>Saint-Pierre</name>
+                     <address>
+                        <country key="VA"/>
+                        <settlement type="city">Cité du Vatican</settlement>
+                        <postCode source="UN/LOCODE">VA VAT</postCode>
+                        <postCode source="GeoNames">6691831</postCode>
+                     </address>
+                  </placeName>
+                  <note>Le Saint-Siège, État localisé au cœur de <placeName ref="#rome"
+                        >Rome</placeName>.</note>
+               </place>
+
+               <place xml:id="cavalleggieri">
+                  <placeName>
+                     <name>porte Cavalleggieri</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city">Rome</settlement>
+                        <postCode source="UN/LOCODE">IT ROM</postCode>
+                        <postCode source="GeoNames">3169070</postCode>
+                     </address>
+                  </placeName>
+                  <note>L'une des portes de <placeName ref="#rome">Rome</placeName>, de nos jours
+                     murée.</note>
+               </place>
+
+               <place xml:id="palais_b">
+                  <placeName>
+                     <name>palais ***</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city">Rome</settlement>
+                        <postCode source="UN/LOCODE">IT ROM</postCode>
+                        <postCode source="GeoNames">3169070</postCode>
+                     </address>
+                  </placeName>
+                  <note>Lieu de résidence de <persName ref="#B"><roleName type="nobility"
+                           >lord</roleName> B***</persName> et <persName ref="#harriet"><roleName
+                           type="nobility">lady</roleName> Harriet</persName>.</note>
+               </place>
+
+               <place xml:id="via_aurelia">
+                  <placeName>
+                     <name>via Aurelia</name>
+                     <address>
+                        <country key="IT"/>
+                     </address>
+                  </placeName>
+                  <note>Ancienne route romaine longeant la côte au nord de <placeName ref="#rome"
+                        >Rome</placeName>.</note>
+               </place>
+
+               <place xml:id="port_genes">
+                  <placeName>
+                     <name>port de Gênes</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city">Gênes</settlement>
+                        <postCode source="UN/LOCODE">IT GOA</postCode>
+                        <postCode source="GeoNames">3176219</postCode>
+                     </address>
+                  </placeName>
+                  <note>Grand port du nord-ouest de l'Italie.</note>
+               </place>
+
+               <place xml:id="frascati">
+                  <placeName>
+                     <name>Frascati</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city"/>
+                        <postCode source="UN/LOCODE">IT FRA</postCode>
+                        <postCode source="GeoNames">3176589</postCode>
+                     </address>
+                  </placeName>
+                  <note>Petite ville italienne située non loin de <placeName ref="#rome"
+                        >Rome</placeName>. <persName ref="#daniella">La Daniella</persName> en est
+                     originaire.</note>
+               </place>
+
+               <place xml:id="saint_ange">
+                  <placeName>
+                     <name>château Saint-Ange</name>
+                     <address>
+                        <country key="IT"/>
+                        <settlement type="city">Rome</settlement>
+                        <postCode source="UN/LOCODE">IT ROM</postCode>
+                        <postCode source="GeoNames">3169070</postCode>
+                     </address>
+                  </placeName>
+                  <note>Forteresse de <placeName ref="#rome">Rome</placeName> et ancien mausolée de
+                     l'empereur romain Hadrien.</note>
+               </place>
+
+               <place xml:id="tibre">
+                  <placeName>
+                     <name>Le Tibre</name>
+                     <address>
+                        <country key="IT"/>
+                     </address>
+                  </placeName>
+                  <note>Fleuve traversant <placeName ref="#rome">Rome</placeName>.</note>
+               </place>
+
+               <place xml:id="paris">
+                  <placeName>
+                     <name>Paris</name>
+                     <address>
+                        <country key="FR"/>
+                        <settlement type="city"/>
+                        <postCode source="UN/LOCODE">FR PAR</postCode>
+                        <postCode source="GeoNames">2988507</postCode>
+                     </address>
+                  </placeName>
+                  <note>Capitale de la France.</note>
+               </place>
+
+            </listPlace>
+         </settingDesc>
+
+      </profileDesc>
+
+   </teiHeader>
+
+   <text>
+      <body>
+         <div type="chapter" n="8">
+
+            <head>VIII (Suite).</head>
+
+            <p> J’étais, depuis une demi-heure environ, seul dans le désert qui s’étend jusqu’aux
+               portes de la ville ; désert affreux, sans grandeur pour le piéton qui, à chaque
+               instant, perdu dans les mornes ondulations du terrain, ne voit qu’une suite de
+               monticules verdâtres où errent, de loin en loin, des troupeaux abandonnés tout le
+               jour à eux-mêmes, sur un sol non moins abandonné de l’homme. Quelque paysagiste que
+               l’on soit, on a le cœur serré, en voyant qu’ici la nature elle-même est une ruine
+               muette et délaissée. </p>
+
+            <p> Le soleil baissait rapidement et, de temps à autre, j’apercevais le dôme de
+                  <placeName ref="#saint_pierre">Saint-Pierre</placeName> dans la brume, moins
+               imposant, à coup sûr, que je ne l’avais rêvé, terne, lugubre, semblable à un mausolée
+               dominant un vaste cimetière. D’une des médiocres hauteurs où je pus atteindre, je me
+               souvins de l’avertissement de <persName ref="#brumieres">Brumières</persName> ; mais
+               je cherchai en vain la diligence, et comme il commençait à faire frais, je poursuivis
+               ma route. </p>
+
+            <p> Un peu plus loin, quelques pierres sortant de l’herbe attirèrent mon attention.
+               C’était un vestige de ces constructions antiques dont la campagne est semée ; mais
+               comme c’était le premier que je voyais tout près de la route, je m’en approchai et
+               m’arrêtai machinalement pour le regarder. J’étais auprès d’une petite butte déchirée
+               à pic, et par l’effet du hasard, je me trouvais caché à quatre escogriffes de
+               mauvaise mine, adossés au revers de cet accident de terrain. Le sol herbu avait
+               amorti le bruit de mes pas, et, au moment où j’allais m’éloigner sans me douter de
+               leur présence, je les aperçus tapis dans les broussailles comme des lièvres au gîte.
+               Il y avait quelque chose de si mystérieux dans leur attitude et dans leur silence<choice>
+                  <sic>.</sic>
+                  <corr> </corr>
+               </choice>que je crus devoir me tenir sur mes gardes. Je me retirai doucement, de
+               manière à mettre tout à fait le pli du terrain entre eux et moi. Au même moment,
+               j’entendis, sur le chemin que je venais de franchir, un bruit de roues, et, pensant
+               que c’était la diligence, j’allais abandonner mon système de précautions, lorsqu’à ce
+               même bruit, mes quatre gaillards se relevèrent sur leurs genoux, rampèrent comme des
+               serpents dans le petit creux qui aboutissait à la route et se trouvèrent à portée du
+               véhicule qui approchait rapidement et qui n’était pas la diligence, mais bien une
+               voiture de louage, traînée par de bons chevaux de poste. </p>
+
+            <p> Je reconnus aussitôt cette voiture pour y avoir vu transporter, à <placeName
+                  ref="#civitavecchia">Civita<choice>
+                     <orig>-V</orig>
+                     <reg>v</reg>
+                  </choice>ecchia</placeName>, le bagage de <persName ref="#harriet"><roleName
+                     type="nobility">lady</roleName> Harriet</persName> et de sa <rs type="person"
+                  ref="#B #medora">famille</rs>. C’était une grande calèche ouverte. Un domestique,
+               dépêché quelques jours d’avance pour l’envoyer, de <placeName ref="#rome"
+                  >Rome</placeName>, au<choice>
+                  <orig> </orig>
+                  <reg>-</reg>
+               </choice>devant des illustres voyageurs, était resté à la ville pour achever de
+               préparer leur logement. J’ai su ce détail après coup. Il n’y avait donc, dans la
+               calèche que <persName ref="#B"><roleName type="nobility">lord</roleName>
+                  B***</persName> (je sais son nom maintenant), sa<rs type="person" ref="#harriet">
+                  femme</rs> et sa<rs type="person" ref="#medora"> nièce</rs>. La <rs type="person"
+                  ref="#daniella">femme de chambre italienne</rs> était sur le si<choice>
+                  <orig>é</orig>
+                  <reg>è</reg>
+               </choice>ge. </p>
+
+            <p> Le projet de mes bandits me parut assez clair, et je me demandai aussitôt comment je
+               pourrais m’y opposer. Rongés par la misère ou par la fièvre, ils ne me paraissaient
+               pas bien solides, sauf un grand chenapan qui n’avait ni le type ni le costume indigène<choice>
+                  <sic>.</sic>
+                  <corr> </corr>
+               </choice> et qui me sembla fortement constitué. Je n’avais pour arme qu’une canne à
+               tête de plomb, et je regardais attentivement ce qu’ils traînaient dans l’herbe avec
+               précaution. Quand ils se redressèrent à demi dans le fossé, je vis que c’était
+               simplement de gros bâtons, circonstance qui acheva de me donner confiance dans le
+               succès de ma défense. Ils devaient avoir quelques couteaux sous leurs habits, car ils
+               ne paraissaient pas gens à se permettre un grand luxe de pistolets. Il s’agissait de
+               ne pas leur donner le temps de faire usage de ces lames, bonnes ou mauvaises. </p>
+
+            <p> J’avais l’avantage de me trouver sur les derrières sans avoir été aperçu. Pendant
+               que je faisais ces réflexions, me débarrassant de mon caban qui m’eût gêné, la
+               calèche arrivait au lieu marqué pour le coup de main. Le postillon, sur une brève
+               sommation, arrêtait ses chevaux, se jetait à genoux et se tournait la face contre
+               terre avec une résignation vraiment édifiante. Cela réduisait d’un tiers les moyens
+               de la défense. Je crus devoir agir prudemment ; et, comme <persName ref="#B"
+                     ><roleName type="nobility">lord</roleName> B***</persName>, ouvrant la portière
+               avec flegme, regardait devant lui à combien d’ennemis il avait affaire, je lui fis
+               signe de ne pas résister encore, ce qu’il comprit avec un admirable <choice>
+                  <orig>sangfroid</orig>
+                  <reg>sang-froid</reg>
+               </choice>. Il mit donc pied à terre en leur disant avec un sourire calme : <said
+                  who="#B" aloud="true" direct="true">«Dépêchez-vous, mes bons amis : la diligence
+                  est derrière nous.»</said> Cette menace parut ne pas les inquiéter, et, voyant
+               qu’il n’y avait pas tentative de résistance, que les <rs type="person"
+                  ref="#medora #harriet #daniella">femmes</rs> ne criaient pas, et que,
+               d’elle-mêmes, elles descendaient précipitamment pour leur abandonner la calèche, ils
+               parlèrent d’accommodement à l’amiable ; et cela, dans des termes d’une courtoisie
+               comique, rendant grâce à la <foreign xml:lang="it"><emph style="font-style: italic"
+                     >gentilezza del <rs type="person" ref="#B">cavaliere</rs></emph></foreign> et
+               hommage à la beauté des <rs type="person" ref="#daniella #harriet #medora"
+               >dames</rs>. </p>
+
+            <p> En ce moment, j’étais sur leurs talons, et, m’adressant au grand chenapan qui ne
+               disait rien et tenait son bâton levé sur la tête de <persName ref="#B"><roleName
+                     type="nobility">lord</roleName> B.</persName> par manière d’intimidation, je
+               déchargeai sur la sienne un si bon coup de ma canne, qu’il tomba comme mort. </p>
+
+            <p> Ramasser le bâton qui s’échappait de cette <emph style="font-style: italic">main
+                  défaillante</emph> et en assommer le bandit obséquieux qui traitait avec <persName
+                  ref="#B"><roleName type="nobility">lord</roleName> B***</persName> fut pour ce
+               dernier l’affaire d’un instant. Le troisième larron, qui tenait les chevaux, ne
+               m’attendit pas ; il prit la fuite. Le quatrième ne fit guère mieux, et, après avoir
+               essayé de montrer son couteau, disparut également. </p>
+
+            <p> Nous restions là avec un homme qui demandait gr<choice>
+                  <orig>a</orig>
+                  <reg>â</reg>
+               </choice>ce, un autre, étendu à terre, qui ne donnait pas signe de vie, un postillon,
+               toujours prosterné, qui ne voulait rien voir de ce qui se passait, et trois <rs
+                  type="person" ref="#medora #harriet #daniella">femmes</rs> plus ou moins évanouies
+               sur les bras. </p>
+
+            <p> Quand le drôle, terrassé par <persName ref="#B"><roleName type="nobility"
+                     >lord</roleName> B***</persName>, vit qu’il ne lui restait aucun espoir de
+               sortir de ses mains, il prit le parti ingénieux de s’évanouir aussi. C’était nous
+               créer un embarras, dans le cas où nous eussions voulu le faire prisonnier. </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Je connais ces
+                  histoires-là</said>, me dit <persName ref="#B"><roleName type="nobility"
+                     >lord</roleName> B***</persName>, qui ne me parut nullement ému ; <said
+                  who="#B" aloud="true" direct="true" toWhom="#valreg">si nous nous arrêtons à
+                  attendre la diligence, qui est encore loin et au pas, nous risquons de voir
+                  arriver du renfort à ces gens-ci, et alors, la vengeance se mêlant de l’affaire,
+                  nous n’en sortirions pas vivants. Si nous avançons, nous laissons échapper ces
+                  messieurs qui ne sont peut-être pas si morts qu’ils en ont l’air. Le mieux est de
+                  retourner vers la diligence et de la forcer à marcher vite jusqu’ici, où nous
+                  aviserons à faire constater le fait et à nous emparer de ces deux blessés avant
+                  qu’ils aient pu se relever.</said>
+            </p>
+
+            <p> C’était le meilleur avis possible. Il fallut rosser le postillon pour le faire
+               revenir de son émotion. Dans l’opinion de son<rs type="person" ref="#B"> mari</rs>,
+                  <persName ref="#harriet"><roleName type="nobility">lady</roleName>
+                  Harriet</persName> aurait peut-être eu besoin du même stimulant pour retrouver le
+               marchepied de la voiture. Elle avait la tête perdue. La<rs type="person"
+                  ref="#medora"> nièce</rs> était d’un calme héroïque. <persName ref="#B"><roleName
+                     type="nobility">Lord</roleName> B***</persName> voulut me faire monter avec
+               elles. Je m’y refusai. Après avoir remis sur son cheval le postillon éperdu, et lui
+               avoir fait tourner bride, je sautai sur le si<choice>
+                  <orig>é</orig>
+                  <reg>è</reg>
+               </choice>ge auprès de la <rs type="person" ref="#daniella">soubrette</rs>, dont la
+               frayeur ne se manifestait que par des torren<choice>
+                  <orig/>
+                  <reg>t</reg>
+               </choice>s de larmes. </p>
+
+            <p> Je n’eus guère le temps de m’occuper de ses nerfs. </p>
+
+            <p> Rencontrer la diligence, l’arrêter, raconter l’aventure, et reprendre les devan<choice>
+                  <orig/>
+                  <reg>t</reg>
+               </choice>s pour montrer au conducteur et aux voyageurs la preuve des faits déclarés,
+               tout cela fut accompli en moins d’un quart d’heure. Mais, ô surprise ! comme on dit
+               dans les romans ; quand nous fûmes sur le lieu du combat, bien reconnaissable pour
+               moi, grâce au fragment de ruine que j’avais exploré à dix pas du chemin, plus de
+               morts, plus de blessés, plus de trace de l’aventure. Pas une goutte du sang de celui
+               à qui j’avais fendu le crâne, pas un haillon enlevé dans la lutte à ses acolytes, pas
+               même l’empreinte du piétinement des chevaux effrayés, ni celle des roues de la
+               voiture sur le sable. Il semblait qu’un coup de vent eût tout balayé, et pourtant il
+               n’y avait pas un souffle dans l’air. </p>
+
+            <p>
+               <persName ref="#B"><roleName type="nobility">Lord</roleName> B***</persName> était
+               plus mortifié que surpris. Il était surtout blessé de l’air de doute du postillon de
+               la diligence. Celui de la calèche était muet comme la tombe, défait, tremblant,
+               peut-être désappointé. <persName ref="#brumieres">Brumières</persName> et quelques
+               voyageurs ajoutaient foi à ma parole ; d’autres se disaient tout bas, en riant, que
+               nous avions rêvé bataille, et qu’une panique nous avait troublé la cervelle. Quelques
+               bergers, à la recherche de leurs troupeaux erran<choice>
+                  <orig/>
+                  <reg>t</reg>
+               </choice>s, riaient aussi et juraient n’avoir rien vu, rien entendu. <persName
+                  ref="#B"><roleName type="nobility">Lord</roleName> B***</persName> avait fort
+               envie de se mettre en colère et de se livrer à une minutieuse perquisition ; mais la
+               nuit approchait, la diligence voulait arriver ; <persName ref="#harriet"><roleName
+                     type="nobility">lady</roleName> Harriet</persName>, nerveuse et malade,
+               s’impatientait de l’obstination de son<rs type="person" ref="#B"> mari</rs>.
+                  <persName ref="#brumieres">Brumières</persName>, enchanté de retrouver sa <rs
+                  type="person" ref="#medora"><roleName type="nobility">princesse</roleName></rs>,
+               et jaloux du bonheur que j’avais eu de lui porter secours, profitait de l’occasion
+               pour faire l’empressé autour d’elle. Quand on se remit en marche, je ne sais comment
+               la chose s’était passée, mais j’étais dans la diligence et <persName ref="#brumieres"
+                  >Brumières</persName> dans la calèche avec les <rs type="person"
+                  ref="#harriet #medora">dames</rs><choice>
+                  <sic>:</sic>
+                  <corr>,</corr>
+               </choice>
+               <persName ref="#B"><roleName type="nobility">mylord</roleName></persName> sur le si<choice>
+                  <orig>é</orig>
+                  <reg>è</reg>
+               </choice>ge, avec la <rs type="person" ref="#daniella">soubrette</rs>. </p>
+
+            <p> Cette <rs type="person" ref="#daniella">soubrette</rs> est, par parenthèse, assez
+               jolie, et, dans le peu de mots que j’avais échangés avec elle sur ce même si<choice>
+                  <orig>é</orig>
+                  <reg>è</reg>
+               </choice>ge de calèche, je lui avais trouvé la voix douce et un très agréable accent.
+               Je lui avais laissé mon caban pour s’envelopper, car elle était peu vêtue pour
+               affronter l’<foreign xml:lang="it"><emph style="font-style: italic"
+                  >influenza</emph></foreign>, c’est-à-dire l’atmosphère de fièvre mortelle qui
+               commence ici à la chute du jour et qui, comme le désert et le brigandage, règne
+               jusqu’au mur d’enceinte de la <placeName ref="#rome">ville des papes</placeName>. </p>
+
+            <p> Ce caban ne me revint en mémoire que lorsque cette <rs type="person" ref="#daniella"
+                  >jeune fille</rs> me le rapporta à la <placeName ref="#cavalleggieri">porte
+                  Cavalleggieri</placeName>, où nous nous arrêtâmes tous pour exhiber une fois de
+               plus nos passeports. Comme pour reprendre mon vêtement je tendais la main, j’y sentis
+               avec beaucoup d’étonnement le baiser d’une bouche fraîche, et, avant que je me fusse
+               rendu compte d’un fait si étrange, la <rs type="person" ref="#daniella"
+                  >soubrette</rs> avait disparu. <persName ref="#brumieres">Brumières</persName>,
+               qui arrivait à moi, ne fit que rire de ma stupéfaction. <said who="#brumieres"
+                  aloud="true" direct="true" toWhom="#valreg">«C’est une chose toute simple</said>,
+               me dit-il ; <said who="#brumieres" aloud="true" direct="true" toWhom="#valreg">c’est
+                  la manière du pays pour dire merci, et cela ne vous donne pas le droit d’exiger
+                  davantage.»</said> C’était plus que je n’aurais jamais songé à <emph
+                  style="font-style: italic">exiger</emph> d’une jolie femme. </p>
+
+            <p> On venait de visiter nos malles pendant une heure, lorsque le conducteur nous
+               annonça que ceci n’était rien, et que nous allions subir une autre visite bien plus
+               longue et bien plus minutieuse à la douane ; mais qu’il pouvait nous en dispenser si
+               nous voulions lui donner chacun deux pauls. Nous mourions de faim et nous donnâmes
+               tous ; mais, quand nous fûmes à la douane, notre collecte ne servit de rien : le
+               digne homme ne put s’entendre avec les douaniers. Un colloque, peu mystérieux et fort
+               long, s’établit à deux pas de nous. Ils voulaient un paul et demi par tête, et il
+               voulait partager seulement par moitié avec eux. On se querella beaucoup ; notre homme
+               se piqua, garda le tout, et nous fûmes visités. </p>
+
+            <p> Comme nous sortions enfin de ce purgatoire, riant, à force de dégoût, de toutes ces
+               bouffonneries, et nous disposant à chercher un gîte, <persName ref="#B"><roleName
+                     type="nobility">lord</roleName> B***</persName>, qui, muni d’un laissez-passer,
+               avait disparu depuis longtemps, me frappa amicalement sur l’épaule en me disant :
+                  <said who="#B" aloud="true" direct="true" toWhom="#valreg">«Je viens de faire ma
+                  déclaration relativement à nos brigands, et de conduire ma<rs type="person"
+                     ref="#harriet"> femme</rs> et ma<rs type="person" ref="#medora"> nièce</rs> au
+                  logement qui les attendait. À présent, je viens vous chercher de leur part. Est-ce
+                  que vous avez ici des paren<choice>
+                     <orig/>
+                     <reg>t</reg>
+                  </choice>s ou des amis qui vous réclament ?»</said>
+            </p>
+
+            <p> Je ne songeai pas à mentir ; mais je remis au lendemain ma visite à ces <rs
+                  type="person" ref="#medora #harriet">dames</rs>, pour cause de faim et de fatigue. </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Oh ! si vous avez faim
+                  et sommeil</said>, reprit-il, <said who="#B" aloud="true" direct="true"
+                  toWhom="#valreg">vous n’irez pas à l’hôtel où, quel qu’il soit, vous serez mal.
+                  Nous avons une bonne chambre pour vous au <placeName ref="#palais_b">palais
+                     ***</placeName>, et nous vous attendons pour manger avec nous un bon
+                  souper.</said>
+            </p>
+
+            <p> Toutes mes excuses furent vaines. <said who="#B" aloud="true" direct="false"
+                  toWhom="#valreg">Je ne rentrerai pas sans vous</said>, me dit-il, <said who="#B"
+                  aloud="true" direct="false" toWhom="#valreg">et ces <rs type="person"
+                     ref="#harriet #medora">dames</rs> ne souperont pas, tant que nous ne serons pas
+                  rentrés.</said>
+            </p>
+
+            <p> Je donnai pour prétexte que je ne voulais pas laisser seul mon ami <persName
+                  ref="#brumieres">Brumières</persName>. </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Qu’à cela ne tienne.
+                  Votre ami viendra aussi</said>, dit <persName ref="#B"><roleName type="nobility"
+                     >lord</roleName> B***</persName>. </p>
+
+            <p>
+               <persName ref="#brumieres">Brumières</persName> ne se le fit pas répéter. Nous voilà
+               aussitôt en route, à pied, dans les rues de <placeName ref="#rome">Rome</placeName>, suivi<choice>
+                  <sic/>
+                  <corr>s</corr>
+               </choice> de <foreign xml:lang="it"><emph style="font-style: italic"
+                  >facchini</emph></foreign> portant nos malles, et de <persName ref="#tartaglia"
+                  >Benvenuto</persName>, qui se regardait comme invité aussi. </p>
+
+            <p> Le <rs type="place" ref="#palais_b">palais</rs> en question me parut bien loin.
+               J’aurais préféré la plus modeste auberge sous la main. C’est une <rs type="place"
+                  ref="#palais_b">maison</rs> trop grande, jadis très magnifique, aujourd’hui très
+               délabrée. Je n’ai pas eu le loisir d’en admirer l’architecture extérieure. J’ignore
+               si elle est louée ou prêtée à mes<rs type="person" ref="#harriet #B"> Anglais</rs>.
+               Leur majordome se vante de l’avoir rendue aussi confortable qu’il est possible de le
+               faire ici en peu de jours. Si cela est, le confortable n’abonde pas à <placeName
+                  ref="#rome">Rome</placeName>. Les meubles modernes disparaissent d’ailleurs dans
+               ces salles immenses, où l’on gèle encore en dépit des grands feux allumés depuis
+               trois jours. </p>
+
+            <p>
+               <persName ref="#B"><roleName type="nobility">lord</roleName> B***</persName> nous
+               conduisit avec nos bagages dans une chambre dont il exigeait que je prisse possession
+               ; après quoi, nous allâmes trouver <persName ref="#harriet"><roleName type="nobility"
+                     >lady</roleName> Harriet</persName> et <persName ref="#medora"><roleName
+                     type="honorific">miss</roleName> Medora</persName> dans un salon gr<choice>
+                  <sic>á</sic>
+                  <corr>a</corr>
+               </choice>nd comme une église, et dont le plafond, surchargé de dorures massives et de
+               peintures confuses, était lézardé en mille endroits. Ces <rs type="person"
+                  ref="#medora #harriet">dames</rs> n’en admirent pas moins le grand caractère de ce
+               local et semblent se plaire à vouloir rajeunir ce vieux luxe évanoui. Beaucoup de
+               bougies, allumées dans des candélabres d’un grand style, éclairaient à peine une
+               table immense copieusement servie, dernière circonstance qui me fût agréable, car
+               j’étais l’être le plus stupidement affamé du monde. Vous connaissez pourtant ma
+               sobriété, mais j’ignore si c’était l'émotion du combat sur la <placeName
+                  ref="#via_aurelia">via Aurelia</placeName>, ou l’air de la mer avalé à pleins
+               poumons depuis quatre jours ; j’étais sourd et quasi muet. Quand cette abrutissante
+               obsession fut calmée, je commençai à faire plus ample connaissance, à l’entremets,
+               avec mes <rs type="person" ref="#medora #harriet">nobles hôtesses</rs> et à m’étonner
+               des amitiés et des prévenances dont j’étais l’objet. Ces <rs type="person"
+                  ref="#harriet #medora">dames</rs>, influencées apparemment par les fresques
+               mythologiques de leur <rs type="place" ref="#palais_b">palais</rs>, voulaient
+               absolument m’ériger en <rs type="person" ref="#valreg">Jupiter libérateur</rs>, en
+                  <rs type="person" ref="#valreg">Apollon vainqueur des monstres</rs>. Il y avait
+               l’enthousiasme des nerfs chez <persName ref="#harriet"><roleName type="nobility"
+                     >lady</roleName> Harriet</persName>. Elle a eu tellement peur ! Chez <persName
+                  ref="#medora"><roleName type="honorific">miss</roleName> Medora</persName>, il y
+               avait quelque chose d’indéfinissable : une reconnaissance moqueuse, ou une
+               acceptation maligne du service rendu. Peut-être la digestion d’un si copieux dîner
+               m’a-t-elle embrouillé la cervelle. Je n’ai rien compris à son air, à son regard, à
+               son sourire, à ses éloges exagérés. Quand elle a vu que j’en étais plus étourdi que
+               flatté, elle m’a laissé tranquille et s’est remise à causer peinture avec <persName
+                  ref="#brumieres">Brumières</persName>. Je la soupçonne de faire des ruines roses
+               et bleues à l’aquarelle. </p>
+
+            <p> Quant à <persName ref="#B"><roleName type="nobility">lord</roleName>
+               B***</persName>, ses remerc<choice>
+                  <orig>î</orig>
+                  <reg>i</reg>
+               </choice>îmen<choice>
+                  <orig/>
+                  <reg>t</reg>
+               </choice>s m’ont été plus agréables, parce qu’ils m’ont paru plus sincères. Comme je
+               lui faisais observer qu’avec sa présence d’esprit et sa manière d’employer le bâton,
+               il se serait probablement tiré d’affaire sans moi. <said who="#B" aloud="true"
+                  direct="true" toWhom="#valreg">— Non</said>, me dit-il, <said who="#B"
+                  aloud="true" direct="true" toWhom="#valreg">je ne crains pas un ou deux hommes,
+                  j’en crains trois ou quatre. Je n’ai que deux mains et deux yeux. Je sais que
+                  trois de nos adversaires n’en valaient peut-être pas un ; mais le quatrième, celui
+                  dont vous avez commencé par me débarrasser, en valait peut-être quatre</said>. </p>
+
+            <p> Je répliquai que je n’y avais pas grand mérite, l’ayant abattu par surprise. <said
+                  who="#valreg" aloud="true" direct="true" toWhom="#B">Je ne suis pas fort</said>,
+               ajoutai-je. <said who="#valreg" aloud="true" direct="true" toWhom="#B">Je n’ai jamais
+                  eu l’occasion de savoir si je suis brave. Pour la première fois de ma vie, j’ai
+                  reconnu la nécessité de la traîtrise, et je n’en suis pas plus fier pour
+                  cela.</said>
+            </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— C’est répondre en homme
+                  modeste </said>, reprit <persName ref="#B"><roleName type="nobility"
+                     >lord</roleName> B***</persName>, en lançant à sa<rs type="person"
+                  ref="#medora"> nièce</rs> un regard sévère qui me confirma dans la pensée du
+               mauvais vouloir de la <rs type="person" ref="#medora">jeune personne</rs> à mon
+               égard. <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Mais moi</said>,
+               poursuivit-il en me regardant, <said who="#B" aloud="true" direct="true"
+                  toWhom="#valreg">je sais que je suis fort et hardi, et que pourtant, sans vous, je
+                  ne me serais pas défendu !</said>
+            </p>
+
+            <p>
+               <said who="#harriet" aloud="true" direct="true" toWhom="#B"><foreign xml:lang="en"
+                        ><emph style="font-style: italic">— Oh ! shame !</emph></foreign></said>
+               murmura <persName ref="#harriet"><roleName type="nobility">lady</roleName>
+                  Harriet</persName>. </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Ma <rs type="person"
+                     ref="#harriet">femme</rs> dit que c’est une honte</said>, reprit-il. <said
+                  who="#B" aloud="true" direct="true" toWhom="#valreg">Les femmes trouvent tout
+                  naturel qu’on se fasse égorger pour sauver leurs diamants, pendant qu’elles se
+                  trouvent mal sur vos bras.</said>
+            </p>
+
+            <p>
+               <said who="#medora" aloud="true" direct="true" toWhom="#B">— Je ne me suis pas
+                  trouvée mal</said>, dit fièrement <persName ref="#medora"><roleName
+                     type="honorific">miss</roleName> Medora</persName>, <said who="#medora"
+                  aloud="true" direct="true" toWhom="#B">je cherchais les pistolets dans la voiture,
+                  et, si je les avais trouvés…</said>
+            </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#medora">— Mais vous ne les
+                  trouviez pas</said>, répondit <persName ref="#B"><roleName type="nobility"
+                     >lord</roleName> B***</persName>. <said who="#B" aloud="true" direct="true"
+                  toWhom="#medora">Donc, vous n’aviez pas les idées bien nettes. Quant à moi</said>,
+               reprit-il en se retournant encore vers moi, <said who="#B" aloud="true" direct="true"
+                  toWhom="#valreg">je vous disais donc que je ne suis pas poltron. Pourtant, je
+                  n’engage jamais de lutte inégale pour peu de chose, et je ne tiens pas assez à
+                  l’argent pour exposer, par mesure d’économie, les personnes que j’accompagne à
+                  être tuées. On peut croire si l’on veut, que c’est à ma vie que je tiens. Je n’ai
+                  pas de grandes raisons pour aimer la vie, n’ayant pas sujet de m’aimer beaucoup
+                  moi-même. Pourtant il y a une chose qui me blesse beaucoup dans ces occasions-là :
+                  c’est de faire la volonté de ceux qui me mettent le couteau sur la gorge. J’aime à
+                  faire ma volonté, à moi, et je ne la fais pas toujours. J’y renonce parfois de
+                  bonne gr<choice>
+                     <orig>a</orig>
+                     <reg>â</reg>
+                  </choice>ce, parfois avec beaucoup d’humeur. J’étais dans cette dernière
+                  disposition quand vous êtes venu à mon secours. Vous m’avez donc, non pas rendu un
+                  service dont je voudrais vous récompenser ; c’était votre devoir, et j’en eusse
+                  fait autant à votre place sans prétendre à votre reconnaissance ; mais vous m’avez
+                  délivré à propos et avec beaucoup de jugement, d’une contrariété, la plus vive que
+                  je connaisse. Par là, vous avez gagné mon amitié, et je veux avoir la
+                  vôtre.</said>
+            </p>
+
+            <p>Ayant ainsi parlé, sans regarder sa<rs type="person" ref="#harriet"> femme</rs>, bien
+               que la moitié de ce discours fût évidemment à son adresse, il me tendit la main avec
+               une franchise irrésistible. </p>
+
+            <p> En ce moment, l’affreux chien jaune que je lui avais vu caresser sur le bateau à
+               vapeur s’élança dans l’appartement et vint se jeter dans ses jambes. </p>
+
+            <p>
+               <said who="#harriet" aloud="true" direct="true" toWhom="#B">— Ah ! ciel !</said>
+               s’écria <persName ref="#harriet"><roleName type="nobility">lady</roleName>
+                  Harriet</persName>, <said who="#harriet" aloud="true" direct="true" toWhom="#B"
+                  >encore cette odieuse bête ! Elle vous a suivi !</said>
+            </p>
+
+            <p>
+               <said who="#b" aloud="true" direct="true" toWhom="#harriet">— C’est malgré
+               moi</said>, répondit-il en soupirant. </p>
+
+            <p>
+               <said who="#harriet" aloud="true" direct="true" toWhom="#B">— Non, vous dis-je ;
+                  c’est un chien que vous avez acheté ou qu’on vous a donné… Vous me trompez
+                  toujours ! Vous disiez qu’il appartenait à quelque passager ; mais c’est à vous
+                  qu’il appartient. Convenez-en donc !</said>
+            </p>
+
+            <p>
+               <persName ref="#B"><roleName type="nobility">Mylord</roleName></persName> jeta sur
+               moi instinctivement un regard de détresse. Instinctivement entraîné, de mon côté, à
+               prendre en pitié le chien et son <rs type="person" ref="#B">maître</rs>, je
+               m’imaginai de dire que l’animal était à moi. J’avais entendu le nom que <persName
+                  ref="#B"><roleName type="nobility">mylord</roleName></persName> lui donnait. <said
+                  who="#valreg" aloud="true" direct="true"><emph style="font-style: italic"
+                     >«Buffalo</emph> !</said> m’écriai-je, <said who="#valreg" aloud="true"
+                  direct="true">venez ici. Pourquoi êtes-vous sorti de ma chambre ? Venez !»</said>
+               Et comme si l’intelligente bête eût compris ce qui se passait, elle vint à moi la
+               tête basse et l’air suppliant. J’allais l’emmener, lorsque <persName ref="#medora"
+                     ><roleName type="honorific">miss</roleName> Medora</persName> demanda gr<choice>
+                  <orig>a</orig>
+                  <reg>â</reg>
+               </choice> pour le chien à sa<rs type="person" ref="#harriet"> tante</rs>, laquelle,
+               excellente femme en somme, me pria de le faire manger et de le laisser s’installer
+               dans un coin. <said who="#harriet" aloud="true" direct="true" toWhom="#valreg">«Il ne
+                  me gêne pas</said>, dit-elle ; <said who="#harriet" aloud="true" direct="true"
+                  toWhom="#valreg">il a l’air bonne personne, et il n’est pas si laid que je
+                  croyais.»</said>
+            </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#harriet">— Je vous demande
+                  pardon</said>, dit <persName ref="#B"><roleName type="nobility">lord</roleName>
+                  B***</persName> ; <said who="#B" aloud="true" direct="true" toWhom="#harriet">il
+                  est fort laid, et vous détestez les chiens.</said>
+            </p>
+
+            <p>
+               <said who="#harriet" aloud="true" direct="true" toWhom="#B">— Où prenez-vous cela
+                  ?</said> reprit-elle. <said who="#harriet" aloud="true" direct="true" toWhom="#B"
+                  >Je ne les déteste pas du tout !</said>
+            </p>
+
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#harriet">— Ah ! oui, pardon !
+                  c’est vrai</said>, murmura-t-il avec son mélancolique sourire : <said who="#B"
+                  aloud="true" direct="true" toWhom="#harriet">vous ne détestez que <emph
+                     style="font-style: italic">mes</emph> chiens.</said>
+            </p>
+
+            <p>
+               <persName ref="#harriet"><roleName type="nobility">Lady</roleName> Harriet</persName>
+               leva les yeux au ciel comme une victime prenant les Dieux à témoin d’une grande
+               injustice. On se levait de table. <persName ref="#B"><roleName type="nobility"
+                     >Lord</roleName> B***</persName> m’emmena dans un coin. <said who="#B"
+                  aloud="true" direct="true" toWhom="#valreg">— Vous êtes un <rs type="person"
+                     ref="#valreg">bon garçon</rs></said>, me dit-il ; <said who="#B" aloud="true"
+                  direct="true" toWhom="#valreg">vous avez compris que j’aime ce chien. Gr<choice>
+                     <orig>a</orig>
+                     <reg>â</reg>
+                  </choice> à vous, il restera dans la maison. Voilà deux fois aujourd’hui que vous
+                  me faites faire ma volonté.</said>
+            </p>
+
+            <p>
+               <said who="#valreg" aloud="true" direct="true" toWhom="#B">— Pourquoi, <persName
+                     ref="#B"><roleName type="nobility">mylord</roleName></persName>, aimez-vous
+                  tant ce chien ? Il n’est réellement pas beau.</said>
+            </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Je l’aime parce que, me
+                  promenant en barque dans le <placeName ref="#port_genes">port de
+                  Gênes</placeName>, je l’ai vu pendu à une corde, prêt à rendre au diable sa pauvre <choice>
+                     <orig>a</orig>
+                     <reg>â</reg>
+                  </choice>me de chien. C’était une bête perdue qui, sautant de barque en barque,
+                  était venue se réfugier à bord d’un bateau de pêcheurs, et ces brutes trouvaient
+                  plaisant de la pendre à une de leurs vergues. Je l’ai réclamé. Il a l’air de
+                  comprendre qu’il me doit la vie, et je crois qu’il m’aime.</said>
+            </p>
+
+            <p>
+               <said who="#valreg" aloud="true" direct="true" toWhom="#B">— En ce cas, je m’en dirai
+                  propriétaire tant que ce sera utile, et je ferai en sorte que <persName
+                     ref="#harriet"><roleName type="nobility">mylady</roleName></persName> vous
+                  conseille de m’en débarrasser.</said>
+            </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Voyez</said>, dit-il,
+                  <said who="#B" aloud="true" direct="true" toWhom="#valreg">ce que c’est que le
+                  caprice d’une femme ! Si <persName ref="#harriet"><roleName type="nobility"
+                        >mylady</roleName></persName> avait vu ce chien avec la corde au cou, et que
+                  je fusse passé sans songer à le sauver, elle m’eût traité d’insouciant et de cruel
+                  ! Elle est très bonne, je vous jure, et très douce ; seulement… seulement, je suis
+                  son <rs type="person" ref="#B">mari</rs>. C’est un grand défaut d’être le mari
+                  d’une femme !</said>
+            </p>
+
+            <p> À son tour, <persName ref="#harriet"><roleName type="nobility"
+                  >mylady</roleName></persName>, toujours très émue, m’appela pour me parler à
+               l’écart. <said who="#harriet" aloud="true" direct="true" toWhom="#valreg">— Nous vous
+                  devons plus que la vie</said>, me dit-elle d’un air exalté. <said who="#harriet"
+                  aloud="true" direct="true" toWhom="#valreg">La vie n’est rien, mais, dans ces
+                  histoires de brigands, les femmes peuvent être exposées à des insultes. Si les
+                  choses en fussent venues là, je suis sûre, j’aime à croire que <persName ref="#B"
+                        ><roleName type="nobility">lord</roleName> B***</persName> se fût fait tuer
+                  pour nous donner le temps de fuir ; mais une seule parole malhonnête est un fer
+                  rouge pour des femmes de notre rang, de notre caractère et de notre nation. Je
+                  vous dirai donc, comme <persName ref="#B"><roleName type="nobility"
+                        >lord</roleName> B***</persName>, et plus chaleureusement, que vous avez
+                  notre amitié, et que nous vous demandons la vôtre. Nous nous connaissons,
+                  d’ailleurs, par votre<rs type="person" ref="#brumieres"> ami <roleName
+                        type="honorific">monsieur</roleName></rs>… Comment l’appelez-vous ?</said>
+            </p>
+
+            <p> Je trouvai fort plaisant que l’on me demandât le nom de l’<rs type="person"
+                  ref="#brumieres">homme qui me servait de caution</rs>, et je me hâtai de dire que
+                  <persName ref="#brumieres">Brumières</persName> ne me connaissait guère plus que
+                  <persName ref="#harriet"><roleName type="nobility">lady</roleName>
+                  Harriet</persName> elle-même. </p>
+
+            <p>
+               <said who="#harriet" aloud="true" direct="true" toWhom="#valreg">— C’est égal</said>,
+               reprit-elle sans se déconcerter, <said who="#harriet" aloud="true" direct="true"
+                  toWhom="#valreg">il nous a dit que vous étiez <rs type="person"
+                     ref="#valreg #brumieres">peintre</rs> comme lui, et que vous aviez beaucoup de
+                  talent.</said>
+            </p>
+
+            <p>
+               <said who="#valreg" aloud="true" direct="true" toWhom="#harriet">— Il n’en sait rien,
+                     <persName ref="#harriet"><roleName type="nobility">mylady</roleName></persName>
+                  ; il n’a pas vu de moi la moindre chose.</said>
+            </p>
+
+            <p>
+               <said who="#harriet" aloud="true" direct="true" toWhom="#valreg">— Oh ! c’est égal !
+                  Il dit que vous parlez si bien de l’art ! et il en parle si bien lui-même ! Il a
+                  tant d’esprit, et il est de si bonne compagnie ! C’est un <rs type="person"
+                     ref="#brumieres">jeune homme charmant</rs> ! et il dit que vous êtes charmant
+                  aussi !</said>
+            </p>
+
+            <p>
+               <said who="#valreg" aloud="true" direct="true" toWhom="#harriet">— Ce qui est bien la
+                  preuve</said>, répondis-je en toute humilité, <said who="#valreg" aloud="true"
+                  direct="true" toWhom="#harriet">que nous sommes charmants tous les deux ! Mais
+                  permettez, <persName ref="#harriet"><roleName type="nobility"
+                     >mylady</roleName></persName>, vous êtes bienveillante, et votre gratitude pour
+                  moi fait honneur à la générosité de votre âme. Pourtant, je ne dois pas…</said>
+            </p>
+
+            <p>
+               <persName ref="#harriet"><roleName type="nobility">Mylady</roleName></persName>
+               m’interrompit en s’écriant : <said who="#harriet" aloud="true" direct="true"
+                  toWhom="#valreg">Ah ! <rs type="person" ref="#valreg"><roleName type="honorific"
+                        >monsieur</roleName></rs>, je vois à votre discrétion et à votre fierté que
+                  ma confiance est bien placée, et que je n’aurai jamais à m’en repentir. Vous
+                  n’êtes pas riche, je le sais, et vous allez, en quelques jours, dépenser à
+                     <placeName ref="#rome">Rome</placeName>, où l’on est affreusement volé, tout ce
+                  qui pourrait vous en rendre le séjour possible. Nous, nous avons plus de fortune
+                  que nous n’en pouvons dépenser ; et, d’ailleurs, nous ne louons pas, on nous prête
+                  cet <rs type="place" ref="#palais_b">hôtel</rs> dont nous n’occupons pas la
+                  moitié. Vous pouvez donc être libre et seul dans tout un étage, qui ne communique
+                  pas même <choice>
+                     <sic>pas </sic>
+                     <corr/>
+                  </choice>avec le nôtre, si l’on veut faire vie à part. Vous n’accepterez notre
+                  table et notre <rs type="person" ref="#harriet #B">société</rs> qu’autant qu’il
+                  vous plaira, pas du tout si nous vous ennuyons. Mais, pour ne pas nous causer un
+                  chagrin réel, vous serez sous notre toit, et dans le cas où vous seriez malade, ce
+                  qui peut fort bien vous arriver dans ce climat, nous serons plus à portée de vous
+                  distraire ou de vous secourir. C’est donc dans notre intérêt que je vous demande
+                  de rester ici, car, en quelque lieu que vous soyez, vous nous serez désormais un
+                     <rs type="person" ref="#valreg">objet de sollicitude</rs>, ou un <rs
+                     type="person" ref="#valreg">sujet d’inquiétude</rs>. Choisissez
+                  généreusement.</said>
+            </p>
+
+            <p> J’étais fort embarrassé. L’offre était si gracieusement tournée que je me trouvais
+               maussade d’y résister. <persName ref="#B"><roleName type="nobility">Lord</roleName>
+                  B***</persName>, plus pénétrant que sa<rs type="person" ref="#harriet">
+               femme</rs>, devina mes scrupules et vint à mon secours. </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Elle vous a rappelé
+                  qu’elle était riche et que vous ne l’étiez pas</said>, me dit-il de manière à être
+               entendu de <persName ref="#harriet"><roleName type="nobility">lady</roleName>
+                  Harriet</persName>. <said who="#B" aloud="true" direct="true" toWhom="#valreg"
+                  >C’est une maladresse ; mais l’intention était bonne, et, quant à vous, vous
+                  sortirez d’affaire à votre honneur en payant votre chambre ce qu’elle nous coûte ;
+                  ça n’ira pas à deux écus par mois. Vous nous permettrez bien de vous prêter les
+                  autres salles dont nous ne nous servons pas, pour faire de la peinture et pour
+                  fumer votre cigare les jours de pluie. Consentez à cet arrangement</said>,
+               ajouta-t-il tout bas. <said who="#B" aloud="true" direct="true" toWhom="#valreg"
+                  >Sinon je serai accusé de froideur, d’impolitesse, de maladresse et d’ingratitude
+                  envers vous.</said>
+            </p>
+
+            <p> Voilà donc mon gîte réglé. Restait à régler celui de <persName ref="#brumieres"
+                  >Brumières</persName>. Je mourais de peur qu’il n’acceptât l’offre qui lui fut
+               faite de partager l’hospitalité que l’on m’imposait. Avec ses prétentions sur le cœur
+               et sur la main de <persName ref="#medora"><roleName type="honorific">miss</roleName>
+                  Medora</persName>, je craignais d’avoir à endosser quelque responsabilité ridicule
+               ou fâcheuse. Heureusement, l’offre lui fut faite avec moins de chaleur qu’à moi, et
+               il eut le bon goût de refuser. Mais il est invité à revenir dîner souvent, ce qui
+               indique l’intention de l’admettre à l’intimité des mœurs françaises. Ce n’est pas la
+               première fois que je remarque combien les Anglais, quand ils sont aimables, le sont
+               complètement. Sont-ils ainsi chez eux ? je ne sais. </p>
+
+            <p> Nous prîmes congé des <rs type="person" ref="#medora #harriet">dames</rs>, qui
+               étaient fatiguées, et <persName ref="#B"><roleName type="nobility">lord</roleName>
+                  B***</persName> me reconduisit à ma chambre pour me montrer le plan de la <rs
+                  type="place" ref="#palais_b">maison</rs>, ainsi qu’à <persName ref="#brumieres"
+                  >Brumières</persName>, <said who="#B" aloud="true" direct="true" toWhom="#valreg"
+                  >«afin qu’il pût venir me voir</said>, disait-il, <said who="#B" aloud="true"
+                  direct="true" toWhom="#valreg">sans être forcé de rendre chaque fois visite à ces
+                     <rs type="person" ref="#harriet #medora">dames</rs> ;»</said> mais, comme nous
+               traversions l’antichambre, suivis de Buffalo, qui doit rester sous ma protection
+               jusqu’à nouvel ordre, je vis que je n’en avais pas fini avec toute ma suite. Au
+               milieu de cette antichambre, ou plutôt de ce corps-de-garde, je trouvai messire
+                  <persName ref="#tartaglia">Benvenuto</persName> se livrant à une danse de
+               caractère avec la <rs type="person" ref="#daniella">gentille suivante</rs> qui
+               m’avait baisé la main. Ils sautaient, au son d’une guitare magistralement raclée par
+               un gros cuisinier à moustaches noires, une superbe caricature de Caracalla, récemment
+               engagé au service de <rs type="person" ref="#harriet #B">leurs <emph
+                     style="font-style: italic">excellences britanniques</emph></rs>. </p>
+
+            <p>
+               <said who="#valreg" aloud="true" direct="true" toWhom="#B">— Ah ! pour le
+               coup</said>, dis-je à mon <rs type="person" ref="#B">hôte</rs>, <said who="#valreg"
+                  aloud="true" direct="true" toWhom="#B">voici un <rs type="person" ref="#tartaglia"
+                     >acolyte</rs> que je désavoue absolument. C’est un <rs type="person"
+                     ref="#tartaglia">bohémien</rs> qui s’est attaché à mes pas et que je n’ai aucun
+                  motif de vous recommander.</said>
+            </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Qui ? <persName
+                     ref="#tartaglia">Tartaglia</persName> ?</said> répondit <persName ref="#B"
+                     ><roleName type="nobility">lord</roleName> B***</persName> en souriant, <said
+                  who="#B" aloud="true" direct="true" toWhom="#valreg">autrement dit <persName
+                     ref="#tartaglia">Benvenuto</persName>, <persName ref="#tartaglia"
+                     >Antoniuccio</persName>, et cent autres noms que nous ne saurons jamais ? Soyez
+                  tranquille : ce n’est pas vous qu’il a suivi; c’est l’odeur de la cuisine qui l’a
+                  attiré. Nous le connaissons beaucoup. C’est l’<rs type="person" ref="#tartaglia"
+                     >ancien loueur d’ânes</rs> et l’<rs type="person" ref="#tartaglia">ancien
+                     ménétrier</rs> de <placeName ref="#frascati">Frascati</placeName>, le <rs
+                     type="person" ref="#tartaglia">compatriote</rs> et le <rs type="person"
+                     ref="#tartaglia">parent</rs> de <persName ref="#daniella">la
+                     Daniella</persName>.</said>
+            </p>
+
+            <p> En parlant ainsi, <persName ref="#B"><roleName type="nobility"
+                  >mylord</roleName></persName> me montrait la <rs type="person" ref="#daniella"
+                  >gentille soubrette</rs> qui continuait à danser en riant et en faisant briller
+               ses dents blanches. Un coup de sonnette ne l’arrêta pas, mais l’enleva adroitement,
+               par une dernière pirouette, jusqu’à la porte de sa <rs type="person" ref="#medora"
+                  >maîtresse</rs>, <persName ref="#medora"><roleName type="honorific"
+                     >miss</roleName> Medora</persName>, à qui elle est particulièrement attachée en
+               qualité de <rs type="person" ref="#daniella">coiffeuse</rs>. </p>
+
+            <p>
+               <said who="#B" aloud="true" direct="true" toWhom="#valreg">— Avez-vous besoin de lui
+                  ?</said> reprit <persName ref="#B"><roleName type="nobility">lord</roleName>
+                  B***</persName> en me montrant <persName ref="#tartaglia"
+                  >Benvenuto-Tartaglia</persName> ; et, sur ma réponse négative : <said who="#B"
+                  aloud="true" direct="true" toWhom="#tartaglia">Va te coucher</said>, dit-il au <rs
+                  type="person" ref="#tartaglia">bohémien</rs> ; <said who="#B" aloud="true"
+                  direct="true" toWhom="#tartaglia">tu reviendras demain matin savoir si <persName
+                     ref="#harriet"><roleName type="nobility">mylady</roleName></persName> a quelque
+                  course à te faire faire, et nous te donnerons un habit, car tu en as
+                  besoin.</said>
+            </p>
+
+            <p>
+               <said who="#tartaglia" aloud="true" direct="true" toWhom="#B">— Eh ! <rs
+                     type="person" ref="#B">carissime <roleName type="honorific"
+                     >monsieur</roleName></rs></said>, répondit-il effrontément, <said
+                  who="#tartaglia" aloud="true" direct="true" toWhom="#B">que m’auriez-vous donné si
+                  j’avais contenté votre désir tout de suite ? Quelques baïoques ! Au lieu que vous
+                  m’avez nourri en voyage aussi longtemps que j’ai laissé jeûner votre curiosité
+                  !</said>
+            </p>
+
+            <p> À demain, <rs type="person" ref="#oncle">cher ami</rs>, pour vous parler de
+                  <placeName ref="#rome">Rome</placeName>, que j’ai traversée, ce soir, à peu près
+               dans les ténèbres. Jamais ville ne consomma moins d’éclairage dans ses rues étroites
+               et croisées d’angles infinis. Cela m’a paru interminable et empesté de cette odeur de
+               graisse chaude qui s’exhale d’une multitude de <foreign xml:lang="it"><emph
+                     style="font-style: italic">frittorie</emph></foreign> en plein air, ornées de
+               feuillages et de banderol<choice>
+                  <orig>l</orig>
+                  <reg/>
+               </choice>es. J’ai longé la base de la colonnade de la place <placeName
+                  ref="#saint_pierre">Saint-Pierre</placeName>, qui paraît une chose puissante, même
+               vue ainsi en courant. J’ai passé au pied du <placeName ref="#saint_ange">château
+                  Saint-Ange</placeName> ; j’ai traversé le <placeName ref="#tibre"
+                  >Tibre</placeName>, et puis je ne sais plus où j’ai été, où je suis. Tout est
+               confus pour moi, tant je me sens fatigué. À demain ! oui, demain, au lever du soleil,
+               je penserai à vous qui me disiez : <said who="#oncle" aloud="false" direct="true"
+                  toWhom="#valreg">«J’ai tant étudié la <placeName ref="#rome">Rome</placeName>
+                  païenne et catholique <choice>
+                     <sic>» </sic>
+                     <corr/>
+                  </choice>que je la connais, je la vois ; je rêve quelquefois <choice>
+                     <sic>» </sic>
+                     <corr/>
+                  </choice>que j’y suis, et je m’y promène comme dans <choice>
+                     <sic>» </sic>
+                     <corr/>
+                  </choice><placeName ref="#paris">Paris</placeName>. Au réveil, il me reste une
+                  impression de <choice>
+                     <sic>» </sic>
+                     <corr/>
+                  </choice>bien-être et d’enthousiasme, de lumière et de <choice>
+                     <sic>» </sic>
+                     <corr/>
+                  </choice> grandeur.»</said>
+               <said who="#valreg" aloud="false" direct="true">— C’est donc demain que je vais
+                  m’éveiller, moi, dans ce beau rêve ! Je ne le crois pas encore. Le morne silence
+                  qui règne déjà au dehors me fait douter si je ne suis pas encore dans la campagne
+                  romaine.</said>
+            </p>
+
+         </div>
+
+      </body>
+
+   </text>
+</TEI>
