@@ -17,7 +17,7 @@
 
          <editionStmt>
             <edition> Encodage et ODD réalisés dans le cadre du cours de XML-TEI de Mme Ségolène
-               Albouy du Master TNAH de l'Ecole nationale des chartes </edition>
+               Albouy du Master TNAH de l'Ecole nationale des chartes. </edition>
             <respStmt>
                <resp>Encodage XML-TEI et création d'une ODD</resp>
                <persName xml:id="a_menu">
@@ -355,7 +355,7 @@
                ma route. </p>
 
             <p> Un peu plus loin, quelques pierres sortant de l’herbe attirèrent mon attention.
-               C’était un vestige de ces constructions antiques dont la campagne est semée ; mais
+               C’était un vestige de ces constructions a ntiques dont la campagne est semée ; mais
                comme c’était le premier que je voyais tout près de la route, je m’en approchai et
                m’arrêtai machinalement pour le regarder. J’étais auprès d’une petite butte déchirée
                à pic, et par l’effet du hasard, je me trouvais caché à quatre escogriffes de
@@ -630,7 +630,7 @@
                trois jours. </p>
 
             <p>
-               <persName ref="#B"><roleName type="nobility">lord</roleName> B***</persName> nous
+               <persName ref="#B"><roleName type="nobility">Lord</roleName> B***</persName> nous
                conduisit avec nos bagages dans une chambre dont il exigeait que je prisse possession
                ; après quoi, nous allâmes trouver <persName ref="#harriet"><roleName type="nobility"
                      >lady</roleName> Harriet</persName> et <persName ref="#medora"><roleName
@@ -669,7 +669,7 @@
                B***</persName>, ses remerc<choice>
                   <orig>î</orig>
                   <reg>i</reg>
-               </choice>îmen<choice>
+               </choice>men<choice>
                   <orig/>
                   <reg>t</reg>
                </choice>s m’ont été plus agréables, parce qu’ils m’ont paru plus sincères. Comme je
