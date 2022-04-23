@@ -54,12 +54,12 @@
                 
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <div type="container">                        
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
                         <h1 class="text-center">
-                            <xsl:value-of select="concat('Encodage XML-TEI du chapitre VIII de ', $title, ' de ', $GS)"/>
+                            <xsl:value-of select="concat('Encodage XML-TEI d''un extrait de ', $title, ' de ', $GS)"/>
                         </h1>
                         <div class="text-center" style="display: block; "><iframe style="width:500px; height: 572.6076409945422px; border: 0;" src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"></iframe></div>
-                        <p class="text-center"><xsl:value-of select="//encodingDesc/p"/></p>
+                        <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un roman-feuilleton publié de janvier à mars 1857 par le journal <i><xsl:value-of select="//biblFull/publicationStmt/publisher"/></i>. L'encodage porte en l'espèce sur la fin du chapitre VIII, parue dans le numéro du <xsl:value-of select="//sourceDesc//date"/>. <xsl:value-of select="//encodingDesc/p"/></p>
                         <div>
                             <h2>Informations relatives à la source :</h2>
                             <ul>
@@ -74,7 +74,7 @@
                             <p>Transformation XSL réalisée dans le cadre du cours de XSL de Mme Ariane Pinche du Master TNAH de l'Ecole nationale des chartes.</p>
                         </div>
                         <div class="text-center">
-                            Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Obeliste.git"><img width="28" height="28" src="images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"/></a>
+                            Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Projet_XSLT_La_Daniella"><img width="28" height="28" src="images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"/></a>
                         </div>
                     </div>
                 </body>
@@ -94,7 +94,7 @@
                 
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <div type="container">                        
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
                         <h1 class="text-center">
                             Version originale du texte
                         </h1>
@@ -119,7 +119,7 @@
                 
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <div type="container">                        
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
                         <h1 class="text-center">
                             Version corrigée du texte
                         </h1>
@@ -182,36 +182,70 @@
                 
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <div type="container">                        
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
                         <h1 class="text-center">
                             Index des personnages
                         </h1>
                         <div>
-                            <ul style="text-justify; padding-left: 110px;">
-                                <xsl:for-each select=".//listPerson/person[1]">
-                                    <xsl:sort select="persName" order="ascending"/>
-                                    <li class="p-3">
-                                                <ul>
-                                                    <b>
-                                                        <xsl:value-of
-                                                            select="/persName"/>
-                                                    </b>
-                                                    
-                                                    <li>
-                                                        <xsl:value-of
-                                                            select="descendant::note"
-                                                        />
-                                                    </li>
-                                                </ul>
-                                                                                    
+                            <ul>                                
+                                <xsl:for-each select="//listPerson/person">
+                                    <xsl:sort select="./persName[1]" order="ascending"/>
+                                    <li>
+                                        <b>
+                                            <xsl:value-of select="./persName[1]"/>
+                                        </b><br/>
+                                        <xsl:value-of select="./note"/>
+                                        <br/><br/>
                                     </li>
-                                </xsl:for-each>
-                            </ul>                           
+                                </xsl:for-each>                                  
+                            </ul>                             
                         </div>
                     </div>
                 </body>
             </html>
         </xsl:result-document>
+        
+        
+        <!-- PAGE INDEX DES LIEUX -->
+        <xsl:result-document href="{$index_lieux}" method="html" indent="yes">
+            <html>
+                <head>
+                    <xsl:call-template name="head"/>
+                    <title>
+                        <xsl:value-of select="concat($title, ' | ', 'Lieux')"/>
+                    </title>                    
+                </head>
+                
+                <body>
+                    <xsl:call-template name="navbar"/>
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
+                        <h1 class="text-center">
+                            Index des lieux
+                        </h1>
+                        <div class="card-columns">
+                                                            
+                                <xsl:for-each select="//listPlace/place">
+                                    <xsl:sort select="./placeName/name[1]" order="ascending"/>    
+                                    <div class="card">
+                                        <h4 class="card-title">
+                                            <xsl:value-of select="placeName/name[1]"/>
+                                        </h4>
+                                        <p class="card-title">
+                                            <xsl:value-of select=".//country"/><br/>
+                                            <xsl:value-of select=".//settlement"/>
+                                        </p>
+                                        <p class="card-text">
+                                            <xsl:value-of select="./note"/>
+                                        </p>    
+                                    <br/><br/>
+                                    </div>
+                                </xsl:for-each>                                  
+                                                       
+                        </div>
+                    </div>
+                </body>
+            </html>
+        </xsl:result-document>        
         
     </xsl:template>
     
@@ -237,7 +271,7 @@
             <xsl:text>accueil.html</xsl:text>
         </xsl:variable>
         
-        <nav class="navbar navbar-expand-md navbar-dark justify-content-between" style="background-color: #e57a44;">
+        <nav class="navbar navbar-expand-md navbar-dark justify-content-between" style="background-color: #003844;">
             <a class="navbar-brand" href="{$accueil}">Accueil</a>
             
             <ul class="navbar-nav mr-auto">
@@ -308,6 +342,16 @@
                 padding: 15px;
                 text-align: justify;
             }
+            
+            div.card {
+                padding: 15px;
+                margin: 5px;
+            }    
+            
+            .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+            }
                        
         </style>
     
@@ -354,13 +398,7 @@
             <xsl:apply-templates mode="#current"/>
         </i>
     </xsl:template>
-    
-    <xsl:template match="//body//choice" mode="comparaison">
-        <b>
-            <xsl:apply-templates mode="comparaison"/>
-        </b>
-    </xsl:template>
-    
+
         
 
 </xsl:stylesheet>

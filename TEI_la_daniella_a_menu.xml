@@ -184,7 +184,7 @@
                      <name>Rome</name>
                      <name>ville des Papes</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city"/>
                         <postCode source="UN/LOCODE">IT ROM</postCode>
                         <postCode source="GeoNames">3169070</postCode>
@@ -197,7 +197,7 @@
                   <placeName>
                      <name>Civitavecchia</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city"/>
                         <postCode source="UN/LOCODE">IT CVV</postCode>
                         <postCode source="GeoNames">3178587</postCode>
@@ -210,7 +210,7 @@
                   <placeName>
                      <name>Saint-Pierre</name>
                      <address>
-                        <country key="VA"/>
+                        <country key="VA">Vatican</country>
                         <settlement type="city">Cité du Vatican</settlement>
                         <postCode source="UN/LOCODE">VA VAT</postCode>
                         <postCode source="GeoNames">6691831</postCode>
@@ -224,7 +224,7 @@
                   <placeName>
                      <name>porte Cavalleggieri</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city">Rome</settlement>
                         <postCode source="UN/LOCODE">IT ROM</postCode>
                         <postCode source="GeoNames">3169070</postCode>
@@ -238,7 +238,7 @@
                   <placeName>
                      <name>palais ***</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city">Rome</settlement>
                         <postCode source="UN/LOCODE">IT ROM</postCode>
                         <postCode source="GeoNames">3169070</postCode>
@@ -253,7 +253,7 @@
                   <placeName>
                      <name>via Aurelia</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                      </address>
                   </placeName>
                   <note>Ancienne route romaine longeant la côte au nord de <placeName ref="#rome"
@@ -264,7 +264,7 @@
                   <placeName>
                      <name>port de Gênes</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city">Gênes</settlement>
                         <postCode source="UN/LOCODE">IT GOA</postCode>
                         <postCode source="GeoNames">3176219</postCode>
@@ -277,7 +277,7 @@
                   <placeName>
                      <name>Frascati</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city"/>
                         <postCode source="UN/LOCODE">IT FRA</postCode>
                         <postCode source="GeoNames">3176589</postCode>
@@ -292,7 +292,7 @@
                   <placeName>
                      <name>château Saint-Ange</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                         <settlement type="city">Rome</settlement>
                         <postCode source="UN/LOCODE">IT ROM</postCode>
                         <postCode source="GeoNames">3169070</postCode>
@@ -306,7 +306,7 @@
                   <placeName>
                      <name>Le Tibre</name>
                      <address>
-                        <country key="IT"/>
+                        <country key="IT">Italie</country>
                      </address>
                   </placeName>
                   <note>Fleuve traversant <placeName ref="#rome">Rome</placeName>.</note>
@@ -316,7 +316,7 @@
                   <placeName>
                      <name>Paris</name>
                      <address>
-                        <country key="FR"/>
+                        <country key="FR">France</country>
                         <settlement type="city"/>
                         <postCode source="UN/LOCODE">FR PAR</postCode>
                         <postCode source="GeoNames">2988507</postCode>

@@ -40,12 +40,22 @@
                 padding: 15px;
                 text-align: justify;
             }
+            
+            div.card {
+                padding: 15px;
+                margin: 5px;
+            }    
+            
+            .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+            }
                        
         </style>
       <title>La Daniella | Accueil</title>
    </head>
    <body>
-      <nav class="navbar navbar-expand-md navbar-dark justify-content-between" style="background-color: #e57a44;"><a class="navbar-brand" href="accueil.html">Accueil</a><ul class="navbar-nav mr-auto">
+      <nav class="navbar navbar-expand-md navbar-dark justify-content-between" style="background-color: #003844;"><a class="navbar-brand" href="accueil.html">Accueil</a><ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="version_originale.html">Version originale</a></li>
             <li class="nav-item"><a class="nav-link" href="version_corrigee.html">Version corrigée</a></li>
             <li class="nav-item"><a class="nav-link" href="version_double.html">Comparer les deux versions</a></li>
@@ -53,10 +63,11 @@
             <li class="nav-item"><a class="nav-link" href="index_lieux.html">Index des lieux</a></li>
          </ul>
       </nav>
-      <div type="container">
-         <h1 class="text-center">Encodage XML-TEI du chapitre VIII de La Daniella de George Sand</h1>
+      <div type="container" style="padding-left: 250px; padding-right: 250px;">
+         <h1 class="text-center">Encodage XML-TEI d'un extrait de La Daniella de George Sand</h1>
          <div class="text-center" style="display: block; "><iframe style="width:500px; height: 572.6076409945422px; border: 0;" src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"></iframe></div>
-         <p class="text-center">Cet encodage a été réalisé à partir de la numérisation disponible sur Gallica et
+         <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un roman-feuilleton publié de janvier à mars 1857 par le journal <i>La Presse</i>. L'encodage porte en l'espèce sur la fin du chapitre VIII, parue dans le numéro du
+            14 janvier 1857. Cet encodage a été réalisé à partir de la numérisation disponible sur Gallica et
             transcrit fidèlement, à l'exception des césures de fin de ligne qui furent retirées
             pour
             plus de lisibilité et faciliter la recherche textuelle.</p>
@@ -77,7 +88,7 @@
                Master TNAH de l'Ecole nationale des chartes.</p>
          </div>
          <div class="text-center">
-            Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Obeliste.git"><img width="28" height="28" src="images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"></a></div>
+            Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Projet_XSLT_La_Daniella"><img width="28" height="28" src="images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"></a></div>
       </div>
    </body>
 </html>
