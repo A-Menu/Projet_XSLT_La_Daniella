@@ -71,7 +71,7 @@
                         <div>
                             <h2>Informations relatives à l'encodage :</h2>
                             <p><xsl:value-of select="//editionStmt/edition"/> <a href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/HTML_la_daniella_a_menu.html">Voir l'ODD correspondante.</a></p>
-                            <p>Transformation XSL réalisée dans le cadre du cours de XSL de Mme Ariane Pinche du Master TNAH de l'Ecole nationale des chartes.</p>
+                            <p>Transformation XSLT réalisée dans le cadre du cours "Techniques et chaîne de publication électronique" de Mme Ariane Pinche du Master TNAH de l'Ecole nationale des chartes.</p>
                         </div>
                         <div class="text-center">
                             Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Projet_XSLT_La_Daniella"><img width="28" height="28" src="images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"/></a>
