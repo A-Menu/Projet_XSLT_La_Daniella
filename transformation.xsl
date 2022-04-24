@@ -80,10 +80,6 @@
                         </h1>
                         <div class="text-center" style="display: block; ">
                             <!-- On intègre le journal numérisé via Gallica -->
-                            <!-- Pour une raison que j'ignore, l'intégration depuis Gallica est assez défectueuse 
-                                et son affichage peut grandement différer selon les machines (les rendus par ma 
-                                machine virtuelle linux et ma machine native windows sont ainsi très différentes). -->
-
                             <iframe style="width:910px; height: 650px; border: 0;"
                                 src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"/>
                         </div>
