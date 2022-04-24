@@ -125,7 +125,7 @@
                             <p>
                                 <xsl:value-of select="//editionStmt/edition"/>
                                 <a
-                                    href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/ODD_la_daniella_a_menu.html"
+                                    href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/HTML_la_daniella_a_menu.html"
                                     >Voir l'ODD correspondante.</a>
                             </p>
                             <p>Transformation XSL réalisée dans le cadre du cours "Techniques et
