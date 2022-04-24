@@ -7,3 +7,11 @@ Transformation XSL de l'encodage en XML-TEI d'un extrait du roman-feuilleton *La
 
 
 Ce projet a été réalisé dans le cadre du cours "Techniques et chaîne de publication électronique" de Mme Ariane Pinche et fait suite à celui de [l'encodage du document en XML-TEI](https://github.com/A-Menu/Projet_TEI_La_Daniella). Tous deux font partie des enseignements du master 2 "Technologies numériques appliquées à l'Histoire" de l'Ecole nationale des chartes.
+
+
+## Structuration du dépôt :
+
+- Un dossier `images` contenant les images utilisées par la feuille de transformation xsl
+- Un dossier `pages` contenant les pages HTML résultant de la transformation xsl
+- Les fichiers `TEI_la_daniella_a_menu.xml`, `ODD_la_daniella_a_menu.html`, `ODD_la_daniella_a_menu.xml` et `RNG_la_daniella_a_menu.rng` relatifs à l'encodage en XML-TEI de l'extrait.
+- Le fichier `transformation.xsl`, feuille de transformation xsl
