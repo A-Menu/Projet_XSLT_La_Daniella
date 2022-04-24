@@ -124,7 +124,7 @@
                                     href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/ODD_la_daniella_a_menu.html"
                                     >Voir l'ODD correspondante.</a>
                             </p>
-                            <p>Transformation XSLT réalisée dans le cadre du cours "Techniques et
+                            <p>Transformation XSL réalisée dans le cadre du cours "Techniques et
                                 chaîne de publication électronique" de Mme Ariane Pinche du Master
                                 TNAH de l'Ecole nationale des chartes.</p>
                         </div>
