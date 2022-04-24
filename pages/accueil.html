@@ -1,0 +1,98 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="description" content="Édition numérique de la fin du chapitre VIII de La Daniella de George Sand">
+      <meta name="keywords" content="XML, TEI, XSLT">
+      <meta name="author" content="Ariane Menu">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script><link rel="icon" type="image/png" href="../images/favicon.png">
+      <style type="text/css">
+            /* Centrer le contenu des pages et justifier le texte */
+            div[type = "container"] {
+                margin-top: 50px;
+                margin-bottom: 100px;
+                margin-left: 100px;
+                margin-right: 100px;
+                text-align: justify;
+            }
+            
+            /* Pour insérer un espace après les titres h1 */
+            h1 {
+                margin-bottom: 50px;
+            }
+            
+            /* Pour insérer un espace après les titres h2 */
+            h2 {
+                margin-bottom: 30px;
+            }
+            
+            /* Pour insérer des espaces avant et après les div */
+            div {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            
+            /* Décaler à droite le logo GitHub localisé en bas de la page d'accueil */
+            .github {
+                margin-left: 8px;
+            }
+            
+            /* Mise en forme des éléments du tableau */
+            td {
+                padding: 15px;
+                text-align: justify;
+            }
+            
+            /* Mise en forme des cartes */
+            div.card {
+                padding: 15px;
+                margin: 5px;
+            }
+            
+            /* Créer un effet au survol de la carte */
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+            }</style>
+      <title>La Daniella | Accueil</title>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-md navbar-dark justify-content-between" style="background-color: #003844;"><a class="navbar-brand" href="accueil.html"><img src="../images/favicon_rond.png" alt="La Daniella" height="30"> Accueil</a><ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="version_originale.html">Version originale</a></li>
+            <li class="nav-item"><a class="nav-link" href="version_corrigee.html">Version corrigée</a></li>
+            <li class="nav-item"><a class="nav-link" href="version_double.html">Comparer les deux versions</a></li>
+            <li class="nav-item"><a class="nav-link" href="index_personnages.html">Index des personnages</a></li>
+            <li class="nav-item"><a class="nav-link" href="index_lieux.html">Index des lieux</a></li>
+         </ul>
+      </nav>
+      <div type="container" style="padding-left: 250px; padding-right: 250px;">
+         <h1 class="text-center">Encodage XML-TEI d'un extrait de La Daniella de George Sand</h1>
+         <div class="text-center" style="display: block; "><iframe style="width:1050px; height: 750px; border: 0;" src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"></iframe></div>
+         <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un
+            roman-feuilleton publié de janvier à mars 1857 par le journal
+            <i>La Presse</i>. L'encodage porte en l'espèce sur la fin du chapitre VIII,
+            parue dans le numéro du 14 janvier 1857.
+            Cet encodage a été réalisé à partir de la numérisation disponible sur Gallica et
+            transcrit fidèlement, à l'exception des césures de fin de ligne qui furent retirées
+            pour
+            plus de lisibilité et faciliter la recherche textuelle.</p>
+         <div>
+            <h2>Informations relatives à la source :</h2>
+            <ul>
+               <li><b>Date originale de publication : </b>14 janvier 1857</li>
+               <li><b>Editeur : </b><i>La Presse</i>, 123 Rue Montmartre, Paris</li>
+               <li><b>Facsimilé : </b><a href="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1">
+                     Bibliothèque nationale de France</a>,  Domaine public </li>
+            </ul>
+         </div>
+         <div>
+            <h2>Informations relatives à l'encodage :</h2>
+            <p> Encodage et ODD réalisés dans le cadre du cours de XML-TEI de Mme Ségolène
+               Albouy du Master TNAH de l'Ecole nationale des chartes. <a href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/ODD_la_daniella_a_menu.html">Voir l'ODD correspondante.</a></p>
+            <p>Transformation XSLT réalisée dans le cadre du cours "Techniques et
+               chaîne de publication électronique" de Mme Ariane Pinche du Master
+               TNAH de l'Ecole nationale des chartes.</p>
+         </div>
+         <div class="text-center"> Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Projet_XSLT_La_Daniella"><img width="28" height="28" src="../images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"></a></div>
+      </div>
+   </body>
+</html>

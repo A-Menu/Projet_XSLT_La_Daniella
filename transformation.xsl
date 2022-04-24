@@ -3,14 +3,19 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei"
     version="2.0">
+
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
-    <xsl:strip-space elements="*"/>   
-    
-        
-    
-    <!-- TEMPLATE PAGES HTML -->
+
+    <!-- On retire les espaces non-voulus -->
+    <xsl:strip-space elements="*"/>
+
+
+
+    <!-- Template des pages HTML -->
+
     <xsl:template match="/">
-        <!-- DEFINITION DES VARIABLES DE NOMS DE FICHIERS DE SORTIE -->
+
+        <!-- Définition de variables pour appeler les pages HTML -->
         <xsl:variable name="index_personnages">
             <xsl:text>index_personnages.html</xsl:text>
         </xsl:variable>
@@ -29,75 +34,128 @@
         <xsl:variable name="accueil">
             <xsl:text>accueil.html</xsl:text>
         </xsl:variable>
-        
-        <!-- DEFINITION DES VARIABLES UTILES -->
+
+
+        <!-- Quelques variables utiles -->
+
+        <!-- Pour appeler le titre du document encodé -->
         <xsl:variable name="title">
             <xsl:value-of select="//fileDesc/titleStmt/title"/>
         </xsl:variable>
+
+        <!-- Pour appeler le nom de l'autrice du texte encodé -->
         <xsl:variable name="GS">
-            <xsl:value-of select="concat(//fileDesc/titleStmt//forename, ' ', //fileDesc/titleStmt//surname)"/>
+            <xsl:value-of
+                select="concat(//fileDesc/titleStmt//forename, ' ', //fileDesc/titleStmt//surname)"
+            />
         </xsl:variable>
+
+        <!-- Pour appeler le nom de l'autrice de l'encodage -->
         <xsl:variable name="AM">
             <xsl:value-of select="concat(//respStmt//forename, ' ', //respStmt//surname)"/>
         </xsl:variable>
-        
-        
-        <!-- PAGE D'ACCUEIL -->
-        <xsl:result-document href="{$accueil}" method="html" indent="yes">
+
+
+
+        <!-- Sortie de la page d'accueil -->
+        <xsl:result-document href="pages/{$accueil}" method="html" indent="yes">
             <html>
                 <head>
+                    <!-- On appelle le template du head HTML -->
                     <xsl:call-template name="head"/>
                     <title>
                         <xsl:value-of select="concat($title, ' | ', 'Accueil')"/>
-                    </title>                    
+                    </title>
                 </head>
-                
+
                 <body>
+                    <!-- On appelle le template de la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
+
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">
                         <h1 class="text-center">
-                            <xsl:value-of select="concat('Encodage XML-TEI d''un extrait de ', $title, ' de ', $GS)"/>
+                            <xsl:value-of
+                                select="concat('Encodage XML-TEI d''un extrait de ', $title, ' de ', $GS)"
+                            />
                         </h1>
-                        <div class="text-center" style="display: block; "><iframe style="width:500px; height: 572.6076409945422px; border: 0;" src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"></iframe></div>
-                        <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un roman-feuilleton publié de janvier à mars 1857 par le journal <i><xsl:value-of select="//biblFull/publicationStmt/publisher"/></i>. L'encodage porte en l'espèce sur la fin du chapitre VIII, parue dans le numéro du <xsl:value-of select="//sourceDesc//date"/>. <xsl:value-of select="//encodingDesc/p"/></p>
+                        <div class="text-center" style="display: block; ">
+                            <!-- On intègre le journal numérisé via Gallica -->
+                            <iframe style="width:1050px; height: 750px; border: 0;"
+                                src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"/>
+                        </div>
+                        <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un
+                            roman-feuilleton publié de janvier à mars 1857 par le journal
+                                    <i><xsl:value-of select="//biblFull/publicationStmt/publisher"
+                                /></i>. L'encodage porte en l'espèce sur la fin du chapitre VIII,
+                            parue dans le numéro du <xsl:value-of select="//sourceDesc//date"/>.
+                                <xsl:value-of select="//encodingDesc/p"/></p>
                         <div>
                             <h2>Informations relatives à la source :</h2>
                             <ul>
-                                <li><b>Date originale de publication : </b><xsl:value-of select="//sourceDesc//date"/></li>
-                                <li><b>Editeur : </b><i><xsl:value-of select="//biblFull/publicationStmt/publisher"/></i></li>
-                                <li><b>Facsimilé : </b><a href="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1"><xsl:value-of select="//publicationStmt/distributor"/></a></li>
+                                <li>
+                                    <b>Date originale de publication : </b>
+                                    <xsl:value-of select="//sourceDesc//date"/>
+                                </li>
+                                <li>
+                                    <b>Editeur : </b>
+                                    <i>
+                                        <xsl:value-of select="//biblFull/publicationStmt/publisher"
+                                        />
+                                    </i>
+                                    <xsl:value-of
+                                        select="concat(', ', //biblFull/descendant::address/street, ', ', //biblFull/descendant::address/settlement)"
+                                    />
+                                </li>
+                                <li>
+                                    <b>Facsimilé : </b>
+                                    <a href="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1">
+                                        <xsl:value-of select="//publicationStmt/distributor"/>
+                                    </a>
+                                    <xsl:value-of select="concat(', ', //sourceDesc//availability)"
+                                    />
+                                </li>
                             </ul>
-                        </div>   
+                        </div>
                         <div>
                             <h2>Informations relatives à l'encodage :</h2>
-                            <p><xsl:value-of select="//editionStmt/edition"/> <a href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/HTML_la_daniella_a_menu.html">Voir l'ODD correspondante.</a></p>
-                            <p>Transformation XSLT réalisée dans le cadre du cours "Techniques et chaîne de publication électronique" de Mme Ariane Pinche du Master TNAH de l'Ecole nationale des chartes.</p>
+                            <p>
+                                <xsl:value-of select="//editionStmt/edition"/>
+                                <a
+                                    href="https://github.com/A-Menu/Projet_TEI_La_Daniella/blob/master/ODD_la_daniella_a_menu.html"
+                                    >Voir l'ODD correspondante.</a>
+                            </p>
+                            <p>Transformation XSLT réalisée dans le cadre du cours "Techniques et
+                                chaîne de publication électronique" de Mme Ariane Pinche du Master
+                                TNAH de l'Ecole nationale des chartes.</p>
                         </div>
-                        <div class="text-center">
-                            Ariane Menu, 2022 <a class="github" href="https://github.com/A-Menu/Projet_XSLT_La_Daniella"><img width="28" height="28" src="images/GitHub-Mark-32px.png" alt="Voir le projet sur GitHub" title="Voir le projet sur Github"/></a>
+                        <div class="text-center"> Ariane Menu, 2022 <a class="github"
+                                href="https://github.com/A-Menu/Projet_XSLT_La_Daniella"><img
+                                    width="28" height="28" src="../images/GitHub-Mark-32px.png"
+                                    alt="Voir le projet sur GitHub"
+                                    title="Voir le projet sur Github"/></a>
                         </div>
                     </div>
                 </body>
             </html>
         </xsl:result-document>
-        
-        
-        <!-- PAGE VERSION ORIGINALE -->
-        <xsl:result-document href="{$version_originale}" method="html" indent="yes">
+
+
+        <!-- Sortie de la page contenant le texte dans sa version originale -->
+        <xsl:result-document href="pages/{$version_originale}" method="html" indent="yes">
             <html>
                 <head>
+                    <!-- On appelle le head HTML -->
                     <xsl:call-template name="head"/>
                     <title>
                         <xsl:value-of select="concat($title, ' | ', 'Version originale')"/>
-                    </title>                    
+                    </title>
                 </head>
-                
+
                 <body>
+                    <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
-                        <h1 class="text-center">
-                            Version originale du texte
-                        </h1>
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">
+                        <h1 class="text-center"> Version originale du texte </h1>
                         <div>
                             <xsl:apply-templates select="//text" mode="original"/>
                         </div>
@@ -105,24 +163,27 @@
                 </body>
             </html>
         </xsl:result-document>
-        
-        
-        <!-- PAGE VERSION CORRIGEE -->
-        <xsl:result-document href="{$version_corrigee}" method="html" indent="yes">
+
+
+        <!-- Sortie de la page contenant le texte dans sa version corrigée -->
+        <xsl:result-document href="pages/{$version_corrigee}" method="html" indent="yes">
             <html>
                 <head>
+                    <!-- On appelle le head HTML -->
                     <xsl:call-template name="head"/>
                     <title>
                         <xsl:value-of select="concat($title, ' | ', 'Version corrigée')"/>
-                    </title>                    
+                    </title>
                 </head>
-                
+
                 <body>
+                    <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
-                        <h1 class="text-center">
-                            Version corrigée du texte
-                        </h1>
+                    <div type="container" style="padding-left: 250px; padding-right: 250px;">
+                        <h1 class="text-center"> Version corrigée du texte </h1>
+                        <div class="text-center">
+                            <i>Les rectifications sont indiquées en gras.</i>
+                        </div>
                         <div>
                             <xsl:apply-templates select="//text" mode="corrige"/>
                         </div>
@@ -130,29 +191,38 @@
                 </body>
             </html>
         </xsl:result-document>
-        
-        
-        <!-- PAGE VERSION DOUBLE -->
-        <xsl:result-document href="{$version_double}" method="html" indent="yes">
+
+
+        <!-- Sortie de la page mettant en parallèle les deux versions du texte -->
+        <xsl:result-document href="pages/{$version_double}" method="html" indent="yes">
             <html>
                 <head>
+                    <!-- On appelle le head HTML -->
                     <xsl:call-template name="head"/>
                     <title>
                         <xsl:value-of select="concat($title, ' | ', 'Comparaison')"/>
-                    </title>                    
+                    </title>
                 </head>
-                
+
                 <body>
+                    <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container">                        
-                        <h1 class="text-center">
-                            Comparaison des deux versions
-                        </h1>
+                    <div type="container">
+                        <h1 class="text-center"> Comparaison des deux versions </h1>
+                        <div class="text-center">
+                            <i>Les rectifications sont indiquées en gras dans la version
+                                corrigée.</i>
+                        </div>
                         <div>
+                            <!-- On crée un tableau contenant les deux versions -->
                             <table>
                                 <tr class="text-center">
-                                    <th><h3>Version originale</h3></th>
-                                    <th><h3>Version corrigée</h3></th>
+                                    <th>
+                                        <h3>Version originale</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Version corrigée</h3>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td>
@@ -168,90 +238,130 @@
                 </body>
             </html>
         </xsl:result-document>
-        
-        
-        <!-- PAGE INDEX DES PERSONNAGES -->
-        <xsl:result-document href="{$index_personnages}" method="html" indent="yes">
+
+
+        <!-- Sortie de la page d'index des personnages -->
+        <xsl:result-document href="pages/{$index_personnages}" method="html" indent="yes">
             <html>
                 <head>
+                    <!-- On appelle le head HTML -->
                     <xsl:call-template name="head"/>
                     <title>
                         <xsl:value-of select="concat($title, ' | ', 'Personnages')"/>
-                    </title>                    
+                    </title>
                 </head>
-                
+
                 <body>
+                    <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
-                        <h1 class="text-center">
-                            Index des personnages
-                        </h1>
-                        <div>
-                            <ul>                                
-                                <xsl:for-each select="//listPerson/person">
-                                    <xsl:sort select="./persName[1]" order="ascending"/>
-                                    <li>
-                                        <b>
-                                            <xsl:value-of select="./persName[1]"/>
-                                        </b><br/>
-                                        <xsl:value-of select="./note"/>
-                                        <br/><br/>
-                                    </li>
-                                </xsl:for-each>                                  
-                            </ul>                             
-                        </div>
-                    </div>
+                    <xsl:call-template name="index_personnages"/>
                 </body>
             </html>
         </xsl:result-document>
-        
-        
-        <!-- PAGE INDEX DES LIEUX -->
-        <xsl:result-document href="{$index_lieux}" method="html" indent="yes">
+
+
+        <!-- Sortie de la page d'index des lieux -->
+        <xsl:result-document href="pages/{$index_lieux}" method="html" indent="yes">
             <html>
                 <head>
+                    <!-- On appelle le head HTML -->
                     <xsl:call-template name="head"/>
                     <title>
                         <xsl:value-of select="concat($title, ' | ', 'Lieux')"/>
-                    </title>                    
+                    </title>
                 </head>
-                
+
                 <body>
+                    <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">                        
-                        <h1 class="text-center">
-                            Index des lieux
-                        </h1>
-                        <div class="card-columns">
-                                                            
-                                <xsl:for-each select="//listPlace/place">
-                                    <xsl:sort select="./placeName/name[1]" order="ascending"/>    
-                                    <div class="card">
-                                        <h4 class="card-title">
-                                            <xsl:value-of select="placeName/name[1]"/>
-                                        </h4>
-                                        <p class="card-title">
-                                            <xsl:value-of select=".//country"/><br/>
-                                            <xsl:value-of select=".//settlement"/>
-                                        </p>
-                                        <p class="card-text">
-                                            <xsl:value-of select="./note"/>
-                                        </p>    
-                                    <br/><br/>
-                                    </div>
-                                </xsl:for-each>                                  
-                                                       
-                        </div>
-                    </div>
+                    <xsl:call-template name="index_lieux"/>
                 </body>
             </html>
-        </xsl:result-document>        
-        
+        </xsl:result-document>
+
     </xsl:template>
-    
-    
-    <!-- NAVBAR -->
+
+
+
+    <!-- Template de l'élément head du HTML -->
+
+    <xsl:template name="head">
+
+        <!-- Métadonnées du document -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description"
+            content="Édition numérique de la fin du chapitre VIII de La Daniella de George Sand"/>
+        <meta name="keywords" content="XML, TEI, XSLT"/>
+        <meta name="author" content="Ariane Menu"/>
+
+        <!-- Références Bootstrap -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"/>
+
+        <!-- Ajouter une icône aux onglets du navigateur -->
+        <link rel="icon" type="image/png" href="../images/favicon.png"/>
+
+        <style type="text/css">
+            /* Centrer le contenu des pages et justifier le texte */
+            div[type = "container"] {
+                margin-top: 50px;
+                margin-bottom: 100px;
+                margin-left: 100px;
+                margin-right: 100px;
+                text-align: justify;
+            }
+            
+            /* Pour insérer un espace après les titres h1 */
+            h1 {
+                margin-bottom: 50px;
+            }
+            
+            /* Pour insérer un espace après les titres h2 */
+            h2 {
+                margin-bottom: 30px;
+            }
+            
+            /* Pour insérer des espaces avant et après les div */
+            div {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            
+            /* Décaler à droite le logo GitHub localisé en bas de la page d'accueil */
+            .github {
+                margin-left: 8px;
+            }
+            
+            /* Mise en forme des éléments du tableau */
+            td {
+                padding: 15px;
+                text-align: justify;
+            }
+            
+            /* Mise en forme des cartes */
+            div.card {
+                padding: 15px;
+                margin: 5px;
+            }
+            
+            /* Créer un effet au survol de la carte */
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+            }</style>
+
+    </xsl:template>
+
+
+
+    <!-- Template de la barre de navigation -->
+
     <xsl:template name="navbar">
+
+        <!-- Variables pour appeler les pages html -->
         <xsl:variable name="index_personnages">
             <xsl:text>index_personnages.html</xsl:text>
         </xsl:variable>
@@ -270,10 +380,12 @@
         <xsl:variable name="accueil">
             <xsl:text>accueil.html</xsl:text>
         </xsl:variable>
-        
-        <nav class="navbar navbar-expand-md navbar-dark justify-content-between" style="background-color: #003844;">
-            <a class="navbar-brand" href="{$accueil}">Accueil</a>
-            
+
+        <!-- Création de la barre de navigation et de ses onglets -->
+        <nav class="navbar navbar-expand-md navbar-dark justify-content-between"
+            style="background-color: #003844;">
+            <a class="navbar-brand" href="{$accueil}"><img src="../images/favicon_rond.png"
+                    alt="La Daniella" height="30"/> Accueil</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{$version_originale}">Version originale</a>
@@ -292,113 +404,260 @@
                 </li>
             </ul>
         </nav>
+
     </xsl:template>
-    
-    
-    <!-- HEAD HTML -->
-    <xsl:template name="head">        
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content="Édition numérique du chapitre VIII de La Daniella de George Sand"/>
-        <meta name="keywords" content="XML, TEI, XSLT"/>
-        <meta name="author" content="Ariane Menu"/>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"/>
-        
-        <link rel="icon" type="image/png" href="images/favicon.png"/>
-    
-        <style type="text/css">
-            /* Pour faire en sorte que les pages aient des espaces en haut et en bas et justifier le texte */
-            div[type="container"] {
-                margin-top: 50px;
-                margin-bottom: 100px;
-                margin-left: 100px;
-                margin-right: 100px;
-                text-align: justify;
-            }
-            
-            /* Pour insérer un espace après les titres */
-            h1 {
-            margin-bottom: 30px;
-            }           
-            
-            /* Pour insérer un espace après les titres */
-            h2 {
-                margin-bottom: 30px;
-            }
-            
-            /* Pour insérer des espaces avant et après les div */
-            div {
-                margin-top: 50px;
-                margin-bottom: 50px;
-            }    
-            
-            /* Pour décaler à droite le logo GitHub par rapport au texte du pied de page */
-            .github {
-                margin-left: 8px;
-            }     
-            
-            td {
-                padding: 15px;
-                text-align: justify;
-            }
-            
-            div.card {
-                padding: 15px;
-                margin: 5px;
-            }    
-            
-            .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-            }
-                       
-        </style>
-    
-    </xsl:template>
-    
-    
+
+
+
+    <!-- Templates supplémentaires -->
+
+
+    <!-- Créer une version originale du texte -->
     <xsl:template match="choice" mode="original">
         <xsl:value-of select="orig/text() | sic/text()"/>
     </xsl:template>
-    
+
+
+    <!-- Créer une version corrigée du texte -->
     <xsl:template match="choice" mode="corrige">
-        <xsl:value-of select="reg/text() | corr/text()"/>
+        <!-- Les corrections sont en gras pour plus de visibilité -->
+        <b>
+            <xsl:value-of select="reg/text() | corr/text()"/>
+        </b>
     </xsl:template>
-    
+
+
+    <!-- Centrer et mettre en valeur le titre du chapitre -->
     <xsl:template match="//body//head" mode="#all">
         <h2 class="text-center">
-            <b>
-                <xsl:apply-templates mode="#current"/>
-            </b>
+            <xsl:apply-templates mode="#current"/>
         </h2>
     </xsl:template>
-    
+
+
+    <!-- Créer un tableau permettant d'afficher les paragraphes et leur numérotation -->
     <xsl:template match="//body//p" mode="#all">
         <table>
             <tbody>
                 <tr>
                     <td>
                         <i>
-                            <xsl:number select="." level="multiple" format="1"/>
+                            <xsl:value-of select="./@n"/>
                         </i>
                     </td>
                     <td>
-                        <p>
-                            <xsl:apply-templates mode="#current"/>
-                        </p>
+                        <xsl:apply-templates mode="#current"/>
                     </td>
                 </tr>
             </tbody>
         </table>
     </xsl:template>
-    
+
+
+    <!-- Créer un renvoi vers l'index des personnages pour les mentions de personnages -->
+    <xsl:template match="//body//persName" mode="#all">
+        <xsl:variable name="index_personnages">
+            <xsl:text>index_personnages.html</xsl:text>
+        </xsl:variable>
+        <xsl:element name="a">
+            <xsl:attribute name="href">
+                <xsl:value-of select="$index_personnages"/>
+            </xsl:attribute>
+            <xsl:apply-templates mode="#current"/>
+        </xsl:element>
+    </xsl:template>
+
+
+    <!-- Créer un renvoi vers l'index des lieux pour les mentions de lieux -->
+    <xsl:template match="//body//placeName" mode="#all">
+        <xsl:variable name="index_lieux">
+            <xsl:text>index_lieux.html</xsl:text>
+        </xsl:variable>
+        <xsl:element name="a">
+            <xsl:attribute name="href">
+                <xsl:value-of select="$index_lieux"/>
+            </xsl:attribute>
+            <xsl:apply-templates mode="#current"/>
+        </xsl:element>
+    </xsl:template>
+
+
+    <!-- Rendre compte des caractères en italique -->
     <xsl:template match="//body//emph" mode="#all">
         <i>
             <xsl:apply-templates mode="#current"/>
         </i>
     </xsl:template>
 
-        
+
+
+    <!-- Templates supplémentaires nommés -->
+
+
+    <!-- Index des personnages -->
+    <xsl:template name="index_personnages">
+        <div type="container" style="padding-left: 250px; padding-right: 250px;">
+            <h1 class="text-center"> Index des personnages </h1>
+
+            <div class="text-center">
+                <i>N.B. : § signifie "paragraphe".</i>
+            </div>
+
+            <div class="card-columns">
+                <xsl:for-each select="//listPerson/person">
+                    <!-- On trie les personnages par ordre alphabétique -->
+                    <xsl:sort select="./persName[1]" order="ascending"/>
+                    <div class="card">
+                        <h4 class="card-title">
+                            <xsl:value-of select="./persName[1]"/>
+                        </h4>
+
+                        <!-- On affiche les alias d'un personnage s'ils existent -->
+                        <xsl:if test="./persName[2]">
+                            <h6 class="card-subtitle mb-2 text-muted"> Alias : <xsl:for-each
+                                    select="./persName[2] | ./persName[3]">
+                                    <xsl:value-of select="."/>
+                                    <xsl:choose>
+                                        <xsl:when test="position() != last()">, </xsl:when>
+                                        <xsl:otherwise>.</xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </h6>
+                        </xsl:if>
+                        <br/>
+
+                        <!-- On renseigne le sexe du personnage -->
+                        <p class="card-text">
+                            <xsl:if test="./sex/@value = 'M'">
+                                <xsl:text>Sexe : masculin</xsl:text>
+                            </xsl:if>
+                            <xsl:if test="./sex/@value = 'F'">
+                                <xsl:text>Sexe : féminin</xsl:text>
+                            </xsl:if>
+                            <br/>
+                            <br/>
+
+                            <!-- On inclut une brève description du personnage -->
+                            <i>
+                                <xsl:value-of select="./note"/>
+                            </i>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                            <!-- On crée une variable pour stocker l'id d'un personnage -->
+                            <xsl:variable name="idPerson">
+                                <xsl:value-of select="./@xml:id"/>
+                            </xsl:variable>
+                            <xsl:if test="./sex/@value = 'M'">
+                                <b>Evoqué aux § : </b>
+                            </xsl:if>
+                            <xsl:if test="./sex/@value = 'F'">
+                                <b>Evoquée aux § : </b>
+                            </xsl:if>
+                            <!-- On recherche les paragraphes où sont mentionnés les personnages (soit directement, via la balise persName, soit indirectement, via la balise rs) -->
+                            <xsl:for-each
+                                select="ancestor::TEI//body/div/p//persName[replace(@ref, '#', '') = $idPerson] | ancestor::TEI//body/div/p//rs[replace(@ref, '#', '') = $idPerson]">
+                                <b>
+                                    <xsl:value-of select="ancestor::p/@n"/>
+                                </b>
+                                <!-- On rend compte de la référence dans le texte -->
+                                <xsl:text> (</xsl:text>
+                                <xsl:value-of select=".//text()"/>
+                                <xsl:text>) </xsl:text>
+                                <xsl:choose>
+                                    <xsl:when test="position() != last()">, </xsl:when>
+                                    <xsl:otherwise>.</xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each>
+
+                            <!-- On recherche les paragraphes où chaque personnage prend la parole -->
+                            <xsl:if
+                                test="ancestor::TEI//body/div/p//said[replace(@who, '#', '') = $idPerson]">
+                                <br/>
+                                <br/>
+                                <b>Prend la parole aux § : </b>
+                                <xsl:for-each
+                                    select="ancestor::TEI//body/div/p//said[replace(@who, '#', '') = $idPerson]">
+                                    <b>
+                                        <xsl:value-of select="ancestor::p/@n"/>
+                                    </b>
+                                    <xsl:choose>
+                                        <xsl:when test="position() != last()">, </xsl:when>
+                                        <xsl:otherwise>.</xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </xsl:if>
+                        </p>
+                    </div>
+                </xsl:for-each>
+            </div>
+        </div>
+    </xsl:template>
+
+
+    <!-- Index des lieux -->
+    <xsl:template name="index_lieux">
+        <div type="container" style="padding-left: 250px; padding-right: 250px;">
+            <h1 class="text-center"> Index des lieux </h1>
+
+            <div class="text-center">
+                <i>N.B. : § signifie "paragraphe".</i>
+            </div>
+
+            <div class="card-columns">
+                <xsl:for-each select="//listPlace/place">
+                    <!-- On trie les lieux par ordre alphabétique -->
+                    <xsl:sort select="./placeName/name[1]" order="ascending"/>
+                    <div class="card">
+                        <h4 class="card-title">
+                            <xsl:value-of select="placeName/name[1]"/>
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            <!-- On renseigne le pays où se trouve le lieu -->
+                            <xsl:value-of select="concat('Pays : ', .//country)"/>
+                            <br/>
+                            <!-- On renseigne la ville où se trouve le lieu et on inclut un lien vers l'entrée associée dans la base GeoNames si elle existe  -->
+                            <xsl:if test=".//postCode[@source = 'GeoNames']">
+                                <xsl:variable name="GeoNames"
+                                    select=".//postCode[@source = 'GeoNames']"/>
+                                <a href="http://www.geonames.org/{$GeoNames}" target="_blank">
+                                    <xsl:value-of select="concat('Ville : ', .//settlement)"/>
+                                </a>
+                            </xsl:if>
+                        </h6>
+                        <br/>
+                        <p class="card-text">
+                            <!-- On inclut une brève description du lieu -->
+                            <xsl:value-of select="./note"/>
+                            <br/>
+                            <br/>
+                            <!-- On crée une variable pour stocker l'id d'un lieu -->
+                            <xsl:variable name="idPlace">
+                                <xsl:value-of select="./@xml:id"/>
+                            </xsl:variable>
+                            <b>Evoqué aux § : </b>
+                            <!-- On recherche les paragraphes où sont mentionnés les lieux (soit directement, via la balise placeName, soit indirectement, via la balise rs) -->
+                            <xsl:for-each
+                                select="ancestor::TEI//body/div/p//placeName[replace(@ref, '#', '') = $idPlace] | ancestor::TEI//body/div/p//rs[replace(@ref, '#', '') = $idPlace]">
+                                <b>
+                                    <xsl:value-of select="ancestor::p/@n"/>
+                                </b>
+                                <!-- On rend compte de la référence dans le texte -->
+                                <xsl:text> (</xsl:text>
+                                <xsl:value-of select=".//text()"/>
+                                <xsl:text>) </xsl:text>
+                                <xsl:choose>
+                                    <xsl:when test="position() != last()">, </xsl:when>
+                                    <xsl:otherwise>.</xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each>
+                        </p>
+                    </div>
+                </xsl:for-each>
+            </div>
+        </div>
+    </xsl:template>
+
 
 </xsl:stylesheet>
