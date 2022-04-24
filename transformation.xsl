@@ -72,7 +72,7 @@
                     <!-- On appelle le template de la barre de navigation -->
                     <xsl:call-template name="navbar"/>
 
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">
+                    <div type="container">
                         <h1 class="text-center">
                             <xsl:value-of
                                 select="concat('Encodage XML-TEI d''un extrait de ', $title, ' de ', $GS)"
@@ -80,8 +80,9 @@
                         </h1>
                         <div class="text-center" style="display: block; ">
                             <!-- On intègre le journal numérisé via Gallica -->
-                            <iframe style="width:1050px; height: 750px; border: 0;"
-                                src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"/>
+                            <div style="padding: 0; padding-bottom: 114.52152819890843%; position: relative;  display: block; height: 0;"><iframe style="position: absolute;  top: 0; bottom: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"></iframe></div>
+                            <!--iframe style="width:850px; height: 750px; border: 0;"
+                                src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"/-->
                         </div>
                         <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un
                             roman-feuilleton publié de janvier à mars 1857 par le journal
@@ -154,7 +155,7 @@
                 <body>
                     <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">
+                    <div type="container">
                         <h1 class="text-center"> Version originale du texte </h1>
                         <div>
                             <xsl:apply-templates select="//text" mode="original"/>
@@ -344,7 +345,7 @@
             /* Mise en forme des cartes */
             div.card {
                 padding: 15px;
-                margin: 5px;
+                margin: 20px;
             }
             
             /* Créer un effet au survol de la carte */
@@ -503,7 +504,7 @@
                 <i>N.B. : § signifie "paragraphe".</i>
             </div>
 
-            <div class="card-columns">
+            <div class="col-sm">
                 <xsl:for-each select="//listPerson/person">
                     <!-- On trie les personnages par ordre alphabétique -->
                     <xsl:sort select="./persName[1]" order="ascending"/>
@@ -541,7 +542,6 @@
                             <i>
                                 <xsl:value-of select="./note"/>
                             </i>
-                            <br/>
                             <br/>
                             <br/>
 
@@ -605,7 +605,7 @@
                 <i>N.B. : § signifie "paragraphe".</i>
             </div>
 
-            <div class="card-columns">
+            <div class="col-sm">
                 <xsl:for-each select="//listPlace/place">
                     <!-- On trie les lieux par ordre alphabétique -->
                     <xsl:sort select="./placeName/name[1]" order="ascending"/>
