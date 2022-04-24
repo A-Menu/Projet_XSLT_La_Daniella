@@ -80,9 +80,12 @@
                         </h1>
                         <div class="text-center" style="display: block; ">
                             <!-- On intègre le journal numérisé via Gallica -->
-                            <div style="padding: 0; padding-bottom: 114.52152819890843%; position: relative;  display: block; height: 0;"><iframe style="position: absolute;  top: 0; bottom: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"></iframe></div>
-                            <!--iframe style="width:850px; height: 750px; border: 0;"
-                                src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"/-->
+                            <!-- Pour une raison que j'ignore, l'intégration depuis Gallica est assez défectueuse 
+                                et son affichage peut grandement différer selon les machines (les rendus par ma machine virtuelle linux et
+                            ma machine native windows sont ainsi très différentes). -->
+                            
+                            <iframe style="width:1300px; height: 700px; border: 0;"
+                                src="https://gallica.bnf.fr/ark:/12148/bpt6k4775546/f1.item.mini"/>
                         </div>
                         <p class="text-center">Écrit par George Sand, <i>La Daniella</i> est un
                             roman-feuilleton publié de janvier à mars 1857 par le journal
@@ -180,7 +183,7 @@
                 <body>
                     <!-- On appelle la barre de navigation -->
                     <xsl:call-template name="navbar"/>
-                    <div type="container" style="padding-left: 250px; padding-right: 250px;">
+                    <div type="container">
                         <h1 class="text-center"> Version corrigée du texte </h1>
                         <div class="text-center">
                             <i>Les rectifications sont indiquées en gras.</i>
@@ -216,6 +219,7 @@
                         </div>
                         <div>
                             <!-- On crée un tableau contenant les deux versions -->
+                            <!-- Pour une raison que j'ignore, un léger décalage peut apparaître entre les textes des deux versions -->
                             <table>
                                 <tr class="text-center">
                                     <th>
