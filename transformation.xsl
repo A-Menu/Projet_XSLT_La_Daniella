@@ -565,7 +565,7 @@
 
     <!-- Index des personnages -->
     <xsl:template name="index_personnages">
-        <div type="container" style="padding-left: 250px; padding-right: 250px;">
+        <div type="container">
             <h1 class="text-center"> Index des personnages </h1>
 
             <div class="text-center">
@@ -685,7 +685,7 @@
 
     <!-- Index des lieux -->
     <xsl:template name="index_lieux">
-        <div type="container" style="padding-left: 250px; padding-right: 250px;">
+        <div type="container">
             <h1 class="text-center"> Index des lieux </h1>
 
             <div class="text-center">
